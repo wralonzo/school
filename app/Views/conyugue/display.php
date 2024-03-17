@@ -21,7 +21,7 @@
         </div>
         <div class="block w-full overflow-x-auto">
             <!-- Projects table -->
-            <table id="example" class="items-center w-full bg-transparent border-collapse"  align="center">
+            <table id="example" class="items-center w-full bg-transparent border-collapse">
                 <thead>
                     <tr>
                         <th class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100">
@@ -36,10 +36,7 @@
                         <th class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100">
                             estudiante
                         </th>
-                        <th class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100">
-                            estado
-                        </th>
-                        <th class=""  align="center">
+                        <th class="">
                             Acciones
                         </th>
                     </tr>
@@ -67,17 +64,10 @@
                                     <?= $usuario['estudiante'] ?>
 
                                 </td>
-                                <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                    <?= $usuario['estado'] ?>
 
-                                </td>
-
-                                <td class="text-center" align="center">
-                                    <a class="bg-blue-500 hover:bg-blue-700 text-white text-center font-bold py-2 px-4 rounded" href="<?= base_url() ?>paciente/editar/<?= $usuario['id_paciente'] ?>">Ver</a>
-                                    <a class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded" href="<?= base_url() ?>conyugue/editar/<?= $usuario['id_paciente'] ?>">Conyugue</a>
-                                    <a class="bg-green-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded" href="<?= base_url() ?>conyugue/editar/<?= $usuario['id_paciente'] ?>">Ficha</a>
-                                    <a class="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded" href="<?= base_url() ?>test/registrartest/<?= $usuario['id_paciente'] ?>">Test</a>
-                                    <a class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" href="<?= base_url() ?>paciente/borrar/<?= $usuario['id_paciente'] ?>">eliminar</a>
+                                <td class="text-center">
+                                    <a class="bg-green-500 text-blue-50 max-w-max shadow-sm hover:shadow-lg " href="<?= base_url() ?>paciente/editar/<?= $usuario['id_paciente'] ?>">Ver</a>
+                                    <a class="bg-red-500 text-blue-50 max-w-max shadow-sm hover:shadow-lg " href="<?= base_url() ?>paciente/borrar/<?= $usuario['id_paciente'] ?>">eliminar</a>
                                 </td>
                             </tr>
                     <?php endforeach;

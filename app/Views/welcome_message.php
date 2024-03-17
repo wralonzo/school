@@ -6,7 +6,6 @@
 </style>
 <section class="container bg-gray-50 dark:bg-gray-900 child-form">
 	<div class="justify-center">
-
 		<table cellspacing="30" align="center">
 			<tr>
 				<th>

@@ -42,7 +42,7 @@ class Estudiante extends BaseController
 				'apellidos' => $this->request->getVar('apellido'),
 				'contacto' => $this->request->getVar('lugar'),
 				'clave' => password_hash($this->request->getVar('carnet'), PASSWORD_DEFAULT),
-				'role' => 'estudiante',
+				'role' => $this->request->getVar('role'),
 				'estado' => 1
 			);
 			$loginSave = new LoginModel();
