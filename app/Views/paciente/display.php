@@ -4,7 +4,7 @@
             <div class="flex flex-wrap items-center">
                 <div class="relative w-full px-4 max-w-full flex-grow flex-1">
                     <h3 class="font-semibold text-lg text-blueGray-700">
-                        Listado de estudiantes
+                        Listado de Pacientes
                     </h3>
                     <div class="grid gap-5">
                         <a href="<?php echo base_url(); ?>paciente/registrar" class="uppercase p-3 flex items-center bg-green-500 text-blue-50 max-w-max shadow-sm hover:shadow-lg rounded-full w-12 h-12 ">
