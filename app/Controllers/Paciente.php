@@ -34,8 +34,6 @@ class Paciente extends BaseController
 	public function registrar()
 	{
 		helper(['form']);
-
-
 		if ($this->request->getPost()) {
 			$userModel = new Paciente_model();
 			$data = [

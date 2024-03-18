@@ -89,12 +89,18 @@
                             </a>
                         </li>
                         <?php if (session()->get('role') == 'admin') : ?>
-                        <li class="items-center">
-                            <a href="<?= base_url() ?>user/list" class="text-xs uppercase py-3 font-bold block text-blueGray-700 hover:text-blueGray-500">
-                                <i class="fas fa-tools mr-2 text-sm text-blueGray-300"></i>
-                                Usuarios
-                            </a>
-                        </li>
+                            <li class="items-center">
+                                <a href="<?= base_url() ?>user/list" class="text-xs uppercase py-3 font-bold block text-blueGray-700 hover:text-blueGray-500">
+                                    <i class="fas fa-tools mr-2 text-sm text-blueGray-300"></i>
+                                    Usuarios
+                                </a>
+                            </li>
+                            <li class="items-center">
+                                <a href="<?= base_url() ?>test/display" class="text-xs uppercase py-3 font-bold block text-blueGray-700 hover:text-blueGray-500">
+                                    <i class="fas fa-table mr-2 text-sm text-blueGray-300"></i>
+                                    Tests
+                                </a>
+                            </li>
                         <?php endif; ?>
                         <li class="items-center">
                             <a href="<?= base_url() ?>paciente/display" class="text-xs uppercase py-3 font-bold block text-blueGray-700 hover:text-blueGray-500">
@@ -107,13 +113,6 @@
                                 <a href="<?= base_url() ?>estudiante/display" class="text-xs uppercase py-3 font-bold block text-blueGray-700 hover:text-blueGray-500">
                                     <i class="fas fa-table mr-2 text-sm text-blueGray-300"></i>
                                     Estudiantes
-                                </a>
-                            </li>
-
-                            <li class="items-center">
-                                <a href="<?= base_url() ?>test/display" class="text-xs uppercase py-3 font-bold block text-blueGray-700 hover:text-blueGray-500">
-                                    <i class="fas fa-table mr-2 text-sm text-blueGray-300"></i>
-                                    Tests
                                 </a>
                             </li>
 

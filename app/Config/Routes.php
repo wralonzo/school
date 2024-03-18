@@ -46,8 +46,6 @@ $routes->get('/test/testdisplay', 'Test::testdisplay',  ['filter' => 'authGuardA
 $routes->get('/test/testborrar/(:any)', 'Test::borrartest/$1',  ['filter' => 'authGuardAdmin']);
 
 
-
-
 $routes->get('/cita/display', 'Cita::display',  ['filter' => 'authGuard']);
 $routes->match(['get', 'post'], '/cita/registrar', 'Cita::registrar', ['filter' => 'authGuard']);
 $routes->get('/cita/editar/(:any)', 'Cita::editar/$1',  ['filter' => 'authGuard']);
@@ -58,8 +56,10 @@ $routes->get('/cita/activar/(:any)', 'Cita::activar/$1',  ['filter' => 'authGuar
 $routes->match(['get', 'post'], '/conyugue/registrar/(:any)', 'Conyugue::registrar/$1', ['filter' => 'authGuard']);
 $routes->get('/conyugue/editar/(:any)', 'Conyugue::editar/$1',  ['filter' => 'authGuard']);
 $routes->post('/conyugue/editar/(:any)', 'Conyugue::editar/$1',  ['filter' => 'authGuard']);
-$routes->get('/conyugue/borrar/(:any)', 'Conyugue::borrar/$1',  ['filter' => 'authGuard']);
-$routes->get('/conyugue/activar/(:any)', 'Conyugue::activar/$1',  ['filter' => 'authGuard']);
+
+$routes->match(['get', 'post'], '/ficha/registrar/(:any)', 'Ficha::registrar/$1', ['filter' => 'authGuard']);
+$routes->get('/ficha/editar/(:any)', 'Ficha::editar/$1',  ['filter' => 'authGuard']);
+$routes->post('/ficha/editar/(:any)', 'Ficha::editar/$1',  ['filter' => 'authGuard']);
 
 
 
