@@ -42,8 +42,8 @@ $routes->match(['get', 'post'], '/test/registrartest/(:any)', 'Test::registrarte
 $routes->match(['get', 'post'], '/test/registrartestpaciente', 'Test::registrartestpaciente', ['filter' => 'authGuard']);
 $routes->get('/test/testeditar/(:any)', 'Test::editartest/$1',  ['filter' => 'authGuard']);
 $routes->post('/test/testeditar/(:any)', 'Test::editartest/$1',  ['filter' => 'authGuard']);
-$routes->get('/test/testdisplay', 'Test::testdisplay',  ['filter' => 'authGuardAdmin']);
-$routes->get('/test/testborrar/(:any)', 'Test::borrartest/$1',  ['filter' => 'authGuardAdmin']);
+$routes->get('/test/testdisplay', 'Test::testdisplay',  ['filter' => 'authGuard']);
+$routes->get('/test/testborrar/(:any)', 'Test::borrartest/$1',  ['filter' => 'authGuard']);
 
 
 $routes->get('/cita/display', 'Cita::display',  ['filter' => 'authGuard']);

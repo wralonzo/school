@@ -115,14 +115,13 @@
                                     Estudiantes
                                 </a>
                             </li>
-
-                            <li class="items-center">
+                        <?php endif; ?>
+                        <li class="items-center">
                                 <a href="<?= base_url() ?>test/testdisplay" class="text-xs uppercase py-3 font-bold block text-blueGray-700 hover:text-blueGray-500">
                                     <i class="fas fa-table mr-2 text-sm text-blueGray-300"></i>
                                     Tests pacientes
                                 </a>
                             </li>
-                        <?php endif; ?>
                         <li class="items-center">
                             <a href="<?= base_url() ?>cita/display" class="text-xs uppercase py-3 font-bold block text-blueGray-700 hover:text-blueGray-500">
                                 <i class="fas fa-table mr-2 text-sm text-blueGray-300"></i>
