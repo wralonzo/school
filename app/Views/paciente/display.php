@@ -73,10 +73,9 @@
                                 </td>
 
                                 <td class="text-center" align="center">
-                                    <a class="bg-blue-500 hover:bg-blue-700 text-white text-center font-bold py-2 px-4 rounded" href="<?= base_url() ?>paciente/editar/<?= $usuario['id_paciente'] ?>">Ver</a>
+                                    <a class="bg-blue-500 hover:bg-blue-700 text-white text-center font-bold py-2 px-4 rounded" href="<?= base_url() ?>paciente/editar/<?= $usuario['id_paciente'] ?>">Editar</a>
                                     <a class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded" href="<?= base_url() ?>conyugue/editar/<?= $usuario['id_paciente'] ?>">Conyugue</a>
                                     <a class="bg-green-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded" href="<?= base_url() ?>conyugue/editar/<?= $usuario['id_paciente'] ?>">Ficha</a>
-                                    <a class="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded" href="<?= base_url() ?>test/registrartest/<?= $usuario['id_paciente'] ?>">Test</a>
                                     <a class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" href="<?= base_url() ?>paciente/borrar/<?= $usuario['id_paciente'] ?>">eliminar</a>
                                 </td>
                             </tr>
