@@ -6,60 +6,49 @@
                     <h3 class="font-semibold text-lg text-blueGray-700">
                         Listado de usuarios
                     </h3>
-                    <div class="grid gap-5">
-                        <a href="<?php echo base_url(); ?>login/registrar"
-                            class="uppercase p-3 flex items-center bg-green-500 text-blue-50 max-w-max shadow-sm hover:shadow-lg rounded-full w-12 h-12 ">
-                            <svg width="32" height="32" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                        </a>
-                    </div>
+                    <a href="<?php echo base_url(); ?>login/registrar">
+                        <div class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full bg-green-500">
+                            <i class="fa fa-plus fa-2x"></i>
+                        </div>
+                    </a>
                     <?php if (session()->get('no_access')) : ?>
                         <h5 style="color: red"><?php echo session()->get('no_access'); ?></h5>
                     <?php endif ?>
                 </div>
             </div>
         </div>
-        <div class="block w-full overflow-x-auto" >
+        <div class="block w-full overflow-x-auto">
             <!-- Projects table -->
-            <table id="example" class="items-center w-full bg-transparent border-collapse" >
+            <table id="example" class="items-center w-full bg-transparent border-collapse">
                 <thead>
                     <tr>
-                        <th
-                            class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100">
+                        <th class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100">
                             Nombres
                         </th>
-                        <th
-                            class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100">
+                        <th class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100">
                             Rol
                         </th>
-                        <th
-                            class="">
+                        <th class="">
                             Contacto
                         </th>
-                        <th
-                            class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100">
+                        <th class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100">
                             Correo
                         </th>
-                        <th
-                            class="">
+                        <th>
                             Acciones
                         </th>
                     </tr>
                 </thead>
                 <tbody>
 
-                    <?php foreach ($data as $usuario): ?>
-                        <tr>
-                            <td
-                                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left flex items-center">
+                    <?php foreach ($data as $usuario) : ?>
+                        <tr class="center-text">
+                            <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left flex items-center">
 
                                 <span class="ml-3 font-bold text-blueGray-600">
                                     <?= $usuario['nombres'] ?> <?= $usuario['apellidos'] ?>
                                 </span>
-                    </td>
+                            </td>
                             <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                                 <i class="fas fa-circle text-orange-500 mr-2"></i>
                                 <?= $usuario['role'] ?>
@@ -74,9 +63,17 @@
 
                             </td>
 
-                            <td class="text-center">
-                               <a class="bg-green-500 text-blue-50 max-w-max shadow-sm hover:shadow-lg " href="<?= base_url() ?>user/editar/<?= $usuario['id'] ?>">Editar</a>
-                               <a class="bg-red-500 text-blue-50 max-w-max shadow-sm hover:shadow-lg " href="<?= base_url() ?>user/borrar/<?= $usuario['id'] ?>">eliminar</a>
+                            <td class="flex flex-row min-h-screen justify-center items-center">
+                                <a class="py-6" href="<?= base_url() ?>user/editar/<?= $usuario['id'] ?>">
+                                    <div class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full bg-blue-500">
+                                        <i class="fas fa-pencil-alt"></i>
+                                    </div>
+                                </a>
+                                <a class="py-6" href="<?= base_url() ?>user/borrar/<?= $usuario['id'] ?>">
+                                    <div class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full bg-red-500">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </div>
+                                </a>
                             </td>
                         </tr>
                     <?php endforeach; ?>
@@ -96,6 +93,14 @@
         },
         search: {
             enabled: true
+        },
+        style: {
+            th: {
+                'text-align': 'center'
+            },
+            td: {
+                'text-align': 'center'
+            },
         }
     });
 </script>

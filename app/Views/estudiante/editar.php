@@ -8,49 +8,49 @@
                   <div class="relative w-full mb-3 px-5">
                     <label class="block uppercase text-white text-xs font-bold mb-2"
                       for="grid-password">carnet</label>
-                      <input type="text"
+                      <input required type="text"
                       class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                       placeholder="carnet" name="carnet" value="<?= $user_data['carnet'] ?>" />
                   </div>
                   <div class="relative w-full mb-3 px-5">
                     <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
                       for="grid-password">nombre</label>
-                      <input type="text"
+                      <input required type="text"
                       class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                       placeholder="nombre" name="nombre" value="<?= $user_data['nombre'] ?>" />
                   </div>
                   <div class="relative w-full mb-3 px-5">
                     <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
                       for="grid-password">Apellidos</label>
-                      <input type="text"
+                      <input required type="text"
                       class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                       placeholder="apellido" name="apellido" value="<?= $user_data['apellido'] ?>" />
                   </div>
                   <div class="relative w-full mb-3 px-5">
                     <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
                       for="grid-password">semestre</label>
-                      <input type="text"
+                      <input required type="text"
                       class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                       placeholder="semestre" name="semestre" value="<?= $user_data['semestre'] ?>" />
                   </div>
                   <div class="relative w-full mb-3 px-5">
                     <label class="block uppercase text-white text-xs font-bold mb-2"
                       for="grid-password">lugar</label>
-                      <input type="text"
+                      <input required type="text"
                       class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                       placeholder="lugar" name="lugar" value="<?= $user_data['lugar'] ?>" />
                   </div>
                   <div class="relative w-full mb-3 px-5">
                     <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
                       for="grid-password">edad</label>
-                      <input type="text"
+                      <input required type="text"
                       class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                       placeholder="edad" name="edad" value="<?= $user_data['edad'] ?>" />
                   </div>
                   <div class="relative w-full mb-3 px-5">
                     <div id="pecesSelecr" class="col-span-6 sm:col-span-3 rounded-md border border-gray-300 bg-white py-2 px-3">
                         <label for="country" class="block text-sm font-medium text-gray-700">Tipo de usuarios</label>
-                        <select id="peces" name="genero" autocomplete="country-name" class="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm">
+                        <select required id="peces" name="genero" autocomplete="country-name" class="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm">
                             <option value="Cubo">Seleccionar</option>
                             <?php 
                               $selectedadmin = '';
@@ -72,7 +72,7 @@
                   <div class="relative w-full mb-3 px-5">
                     <div id="pecesSelecr" class="col-span-6 sm:col-span-3 rounded-md border border-gray-300 bg-white py-2 px-3">
                       <label for="country" class="block text-sm font-medium text-gray-700">Estado</label>
-                      <select id="estado" name="estado" autocomplete="country-name" class="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm">
+                      <select required id="estado" name="estado" autocomplete="country-name" class="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm">
                         <option value="Activo">Activo</option>
                         <option value="Inactivo">Inactivo</option>
                       </select>

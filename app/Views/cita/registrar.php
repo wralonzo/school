@@ -9,17 +9,17 @@
       <div id="main" class="grid grid-rows-2 grid-flow-col">
         <div class="relative w-full mb-4 px-5">
           <label class="block uppercase text-xs text-white font-bold mb-2" for="grid-password">fecha</label>
-          <input type="date" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="fecha" name="fecha" />
+          <input required type="date" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="fecha" name="fecha" />
         </div>
 
         <div class="relative w-full mb-3 px-5">
           <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="grid-password">hora</label>
-          <input type="time" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="hora" name="hora" />
+          <input required type="time" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="hora" name="hora" />
         </div>
         <div class="relative w-full mb-3 px-5">
           <div id="pecesSelecr" class="col-span-6 sm:col-span-3 rounded-md border border-gray-300 bg-white py-2 px-3">
             <label for="country" class="block text-sm font-medium text-gray-700">Jornada</label>
-            <select id="jornada" name="jornada" autocomplete="country-name" class="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm">
+            <select required id="jornada" name="jornada" autocomplete="country-name" class="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm">
               <option value="Matutina">Matutina</option>
               <option value="Vespertina">Vespertina</option>
             </select>
@@ -28,7 +28,7 @@
         <div class="relative w-full mb-3 px-5">
           <div id="pecesSelecr" class="col-span-6 sm:col-span-3 rounded-md border border-gray-300 bg-white py-2 px-3">
             <label for="country" class="block text-sm font-medium text-gray-700">Estado de la cita </label>
-            <select id="estado_cita" name="estado_cita" autocomplete="country-name" class="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm">
+            <select required id="estado_cita" name="estado_cita" autocomplete="country-name" class="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm">
               <option value="Reservada">Reservada</option>
             </select>
           </div>
@@ -36,7 +36,7 @@
         <div class="relative w-full mb-3 px-5">
           <div id="pecesSelecr" class="col-span-6 sm:col-span-3 rounded-md border border-gray-300 bg-white py-2 px-3">
             <label for="country" class="block text-sm font-medium text-gray-700">Estudiante</label>
-            <select id="sexo" name="estudiante" autocomplete="country-name" class="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm">
+            <select required id="sexo" name="estudiante" autocomplete="country-name" class="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm">
               <option value="">Seleccione un estudiante</option>
               <?php
               if (count($estudiantes) > 0) :
@@ -50,7 +50,7 @@
         <div class="relative w-full mb-3 px-5">
           <div id="pecesSelecr" class="col-span-6 sm:col-span-3 rounded-md border border-gray-300 bg-white py-2 px-3">
             <label for="country" class="block text-sm font-medium text-gray-700">Paciente</label>
-            <select id="sexo" name="paciente" autocomplete="country-name" class="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm">
+            <select required id="sexo" name="paciente" autocomplete="country-name" class="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm">
               <option value="">Seleccione un paciente</option>
               <?php
               if (count($pacientes) > 0) :

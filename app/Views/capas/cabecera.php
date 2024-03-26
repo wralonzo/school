@@ -21,6 +21,7 @@
     <script src="https://unpkg.com/jquery/dist/jquery.min.js"></script>
     <script src="https://unpkg.com/gridjs-jquery/dist/gridjs.production.min.js"></script>
     <link rel="stylesheet" type="text/css" href="https://unpkg.com/gridjs/dist/theme/mermaid.min.css" />
+    <style></style>
 </head>
 
 <body class="text-blueGray-700 antialiased">
