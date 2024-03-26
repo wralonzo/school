@@ -73,9 +73,20 @@
       </div>
 
       <div class="text-center mt-6">
-        <button class="bg-blueGray-800 text-white active:bg-blueGray-600 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full ease-linear transition-all duration-150" type="submit">
-          Guardar Cambios
-        </button>
+        <div id="main" class="grid grid-rows-1 grid-flow-col">
+          <div class="relative w-full mb-3 px-5">
+            <a href="<?= base_url() ?>estudiante/display">
+              <button type="button" class="bg-blue-600 text-white active:bg-blueGray-600 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full ease-linear transition-all duration-150">
+                Cancelar
+              </button>
+            </a>
+          </div>
+          <div class="relative w-full mb-3 px-5">
+            <button class="bg-blueGray-800 text-white active:bg-blueGray-600 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full ease-linear transition-all duration-150" type="submit">
+              Registrar Datos
+            </button>
+          </div>
+        </div>
       </div>
     </form>
   </div>

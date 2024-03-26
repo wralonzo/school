@@ -3,14 +3,14 @@
         <div class="rounded-t mb-0 px-4 py-3 border-0">
             <div class="flex flex-wrap items-center">
                 <div class="relative w-full px-4 max-w-full flex-grow flex-1">
-                    <h3 class="font-semibold text-lg text-blueGray-700">
+                    <h3 class="font-semibold text-4xl text-blueGray-700 text-center">
                         Listado de reservaciones
                     </h3>
                     <div class="grid gap-5">
-                        <a href="<?php echo base_url(); ?>cita/registrar" class="uppercase p-3 flex items-center bg-green-500 text-blue-50 max-w-max shadow-sm hover:shadow-lg rounded-full w-12 h-12 ">
-                            <svg width="32" height="32" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
+                        <a href="<?php echo base_url(); ?>cita/registrar" >
+                            <div class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full bg-green-500">
+                                <i class="fa fa-plus fa-2x"></i>
+                            </div>
                         </a>
                     </div>
                     <?php if (session()->get('no_access')) : ?>
@@ -51,7 +51,7 @@
                 <tbody>
 
                     <?php if (count($citas) > 0) : foreach ($citas as $cita) : ?>
-                            <tr  style="background-color: goldenrod;">
+                            <tr style="background-color: goldenrod;">
                                 <td style="background-color: goldenrod;" class="border-t-0 px-6 align-middle border-l-0 border-r-0 bg-red text-xs whitespace-nowrap p-4 text-left flex items-center">
 
                                     <span class="ml-3 font-bold text-blueGray-600">
@@ -78,8 +78,16 @@
                                 </td>
 
                                 <td class="text-center">
-                                    <a class="bg-green-500 text-blue-50 max-w-max shadow-sm hover:shadow-lg " href="<?= base_url() ?>cita/editar/<?= $cita['cita'] ?>">Editar</a>
-                                    <a class="bg-red-500 text-blue-50 max-w-max shadow-sm hover:shadow-lg " href="<?= base_url() ?>cita/borrar/<?= $cita['cita'] ?>">eliminar</a>
+                                    <a class="py-6" href="<?= base_url() ?>cita/editar/<?= $cita['cita'] ?>">
+                                        <div class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full bg-blue-500">
+                                            <i class="fas fa-pencil-alt"></i>
+                                        </div>
+                                    </a>
+                                    <a class="py-6" href="<?= base_url() ?>cita/borrar/<?= $cita['cita'] ?>">
+                                        <div class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full bg-red-500">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </div>
+                                    </a>
                                 </td>
                             </tr>
                     <?php endforeach;

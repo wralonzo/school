@@ -3,17 +3,14 @@
         <div class="rounded-t mb-0 px-4 py-3 border-0">
             <div class="flex flex-wrap items-center">
                 <div class="relative w-full px-4 max-w-full flex-grow flex-1">
-                    <h3 class="font-semibold text-lg text-blueGray-700">
-                        Listado de tests
+                    <h3 class="font-semibold text-4xl text-blueGray-700 text-center">
+                        Lista de Nombre de Test
                     </h3>
                     <div class="grid gap-5">
-                        <a href="<?php echo base_url(); ?>test/registrar"
-                            class="uppercase p-3 flex items-center bg-green-500 text-blue-50 max-w-max shadow-sm hover:shadow-lg rounded-full w-12 h-12 ">
-                            <svg width="32" height="32" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
+                        <a href="<?php echo base_url(); ?>test/registrar">
+                            <div class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full bg-green-500">
+                                <i class="fa fa-plus fa-2x"></i>
+                            </div>
                         </a>
                     </div>
                     <?php if (session()->get('no_access')) : ?>
@@ -22,48 +19,53 @@
                 </div>
             </div>
         </div>
-        <div class="block w-full overflow-x-auto" >
+        <div class="block w-full overflow-x-auto">
             <!-- Projects table -->
-            <table id="example" class="items-center w-full bg-transparent border-collapse" >
+            <table id="example" class="items-center w-full bg-transparent border-collapse">
                 <thead>
                     <tr>
-                        <th
-                            class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100">
+                        <th class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100">
                             Id
                         </th>
-                        <th
-                            class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100">
+                        <th class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100">
                             Nombre
                         </th>
-                        <th
-                            class="">
+                        <th class="">
                             Acciones
                         </th>
                     </tr>
                 </thead>
                 <tbody>
 
-                    <?php if(count($tests)>0): foreach ($tests as $test): ?>
-                        <tr>
-                            <td
-                                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left flex items-center">
+                    <?php if (count($tests) > 0) : foreach ($tests as $test) : ?>
+                            <tr>
+                                <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left flex items-center">
 
-                                <span class="ml-3 font-bold text-blueGray-600">
-                                    <?= $test['id_test'] ?> 
-                                </span>
-                    </td>
-                            <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                <i class="fas fa-circle text-orange-500 mr-2"></i>
-                                <?= $test['nombre'] ?>
+                                    <span class="ml-3 font-bold text-blueGray-600">
+                                        <?= $test['id_test'] ?>
+                                    </span>
+                                </td>
+                                <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                                    <i class="fas fa-circle text-orange-500 mr-2"></i>
+                                    <?= $test['nombre'] ?>
 
-                            </td>
+                                </td>
 
-                            <td class="text-center">
-                               <a class="bg-green-500 text-blue-50 max-w-max shadow-sm hover:shadow-lg " href="<?= base_url() ?>test/editar/<?= $test['id_test'] ?>">Editar</a>
-                               <a class="bg-red-500 text-blue-50 max-w-max shadow-sm hover:shadow-lg " href="<?= base_url() ?>test/borrar/<?= $test['id_test'] ?>">eliminar</a>
-                            </td>
-                        </tr>
-                    <?php  endforeach; endif;?>
+                                <td class="text-center">
+                                    <a class="py-6" href="<?= base_url() ?>test/editar/<?= $test['id_test'] ?>">
+                                        <div class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full bg-blue-500">
+                                            <i class="fas fa-pencil-alt"></i>
+                                        </div>
+                                    </a>
+                                    <a class="py-6" href="<?= base_url() ?>test/borrar/<?= $test['id_test'] ?>">
+                                        <div class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full bg-red-500">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </div>
+                                    </a>
+                                </td>
+                            </tr>
+                    <?php endforeach;
+                    endif; ?>
                 </tbody>
             </table>
         </div>

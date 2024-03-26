@@ -86,56 +86,59 @@
                     <!-- Divider -->
                     <hr class="my-4 md:min-w-full" />
                     <!-- Heading -->
-                    <h6 claamburguerulos </h6>
-                        <!-- Navigation -->
+                    <h6 claamburguerulos> </h6>
+                    <!-- Navigation -->
 
-                        <ul class="md:flex-col md:min-w-full flex flex-col list-none">
+                    <ul class="md:flex-col md:min-w-full flex flex-col list-none">
+                        <li class="items-center">
+                            <a href="<?= base_url() ?>" class="text-xs uppercase py-3 font-bold block text-pink-500 hover:text-pink-600">
+                                <i class="fas fa-tv mr-2 text-sm opacity-75"></i>
+                                Inicio
+                            </a>
+                        </li>
+                        <?php if (session()->get('role') == 'admin') : ?>
                             <li class="items-center">
-                                <a href="<?= base_url() ?>" class="text-xs uppercase py-3 font-bold block text-pink-500 hover:text-pink-600">
-                                    <i class="fas fa-tv mr-2 text-sm opacity-75"></i>
-                                    Inicio
+                                <a href="<?= base_url() ?>user/list" class="text-xs uppercase py-3 font-bold block text-blueGray-700 hover:text-blueGray-500">
+                                    <i class="fas fa-tools mr-2 text-sm text-blueGray-300"></i>
+                                    Usuarios
                                 </a>
                             </li>
-                            <?php if (session()->get('role') == 'admin') : ?>
-                                <li class="items-center">
-                                    <a href="<?= base_url() ?>user/list" class="text-xs uppercase py-3 font-bold block text-blueGray-700 hover:text-blueGray-500">
-                                        <i class="fas fa-tools mr-2 text-sm text-blueGray-300"></i>
-                                        Usuarios
-                                    </a>
-                                </li>
-                                <li class="items-center">
-                                    <a href="<?= base_url() ?>test/display" class="text-xs uppercase py-3 font-bold block text-blueGray-700 hover:text-blueGray-500">
-                                        <i class="fas fa-table mr-2 text-sm text-blueGray-300"></i>
-                                        Tests
-                                    </a>
-                                </li>
-                            <?php endif; ?>
+                        <?php endif; ?>
+                        <li class="items-center">
+                            <a href="<?= base_url() ?>paciente/display" class="text-xs uppercase py-3 font-bold block text-blueGray-700 hover:text-blueGray-500">
+                                <i class="fas fa-table mr-2 text-sm text-blueGray-300"></i>
+                                Pacientes
+                            </a>
+                        </li>
+                        <?php if (session()->get('role') == 'admin') : ?>
                             <li class="items-center">
-                                <a href="<?= base_url() ?>paciente/display" class="text-xs uppercase py-3 font-bold block text-blueGray-700 hover:text-blueGray-500">
+                                <a href="<?= base_url() ?>estudiante/display" class="text-xs uppercase py-3 font-bold block text-blueGray-700 hover:text-blueGray-500">
                                     <i class="fas fa-table mr-2 text-sm text-blueGray-300"></i>
-                                    Pacientes
+                                    Estudiantes
                                 </a>
                             </li>
-                            <?php if (session()->get('role') == 'admin') : ?>
-                                <li class="items-center">
-                                    <a href="<?= base_url() ?>estudiante/display" class="text-xs uppercase py-3 font-bold block text-blueGray-700 hover:text-blueGray-500">
-                                        <i class="fas fa-table mr-2 text-sm text-blueGray-300"></i>
-                                        Estudiantes
-                                    </a>
-                                </li>
-                            <?php endif; ?>
+                        <?php endif; ?>
+                        <li class="items-center">
+                            <a href="<?= base_url() ?>test/testdisplay" class="text-xs uppercase py-3 font-bold block text-blueGray-700 hover:text-blueGray-500">
+                                <i class="fas fa-table mr-2 text-sm text-blueGray-300"></i>
+                                Tests pacientes
+                            </a>
+                        </li>
+                        <?php if (session()->get('role') == 'admin') : ?>
                             <li class="items-center">
-                                <a href="<?= base_url() ?>test/testdisplay" class="text-xs uppercase py-3 font-bold block text-blueGray-700 hover:text-blueGray-500">
+                                <a href="<?= base_url() ?>test/display" class="text-xs uppercase py-3 font-bold block text-blueGray-700 hover:text-blueGray-500">
                                     <i class="fas fa-table mr-2 text-sm text-blueGray-300"></i>
-                                    Tests pacientes
+                                    Tests
                                 </a>
                             </li>
-                            <li class="items-center">
-                                <a href="<?= base_url() ?>cita/display" class="text-xs uppercase py-3 font-bold block text-blueGray-700 hover:text-blueGray-500">
-                                    <i class="fas fa-clock mr-2 text-sm text-blueGray-300"></i>
-                                    Citas
-                                </a>
-                            </li>
+                        <?php endif; ?>
+                        <li class="items-center">
+                            <a href="<?= base_url() ?>cita/display" class="text-xs uppercase py-3 font-bold block text-blueGray-700 hover:text-blueGray-500">
+                                <i class="fas fa-clock mr-2 text-sm text-blueGray-300"></i>
+                                Citas
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </nav>
@@ -143,7 +146,7 @@
         <div id='amburguerMain' class="amburguerMain relative md:ml-64 bg-blueGray-50">
 
             <nav class="absolute top-0 left-0 w-full z-10 bg-transparent md:flex-row md:flex-nowrap md:justify-start flex items-center p-4">
-                <button  onclick="toggleNavbarAMnuegOpen('amburguer')" id="btnOpen" class="btnOpen cursor-pointer text-white px-3 hidden py-1 text-xl leading-none bg-transparent rounded border border-solid border-transparent" type="button" onclick="toggleNavbar('example-collapse-sidebar')">
+                <button onclick="toggleNavbarAMnuegOpen('amburguer')" id="btnOpen" class="btnOpen cursor-pointer text-white px-3 hidden py-1 text-xl leading-none bg-transparent rounded border border-solid border-transparent" type="button" onclick="toggleNavbar('example-collapse-sidebar')">
                     <i class="fas fa-bars"></i>
                 </button>
                 <div class="w-full mx-autp items-center flex justify-between md:flex-nowrap flex-wrap md:px-10 px-4">

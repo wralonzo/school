@@ -7,10 +7,10 @@
                         Listado de Pacientes
                     </h3>
                     <div class="grid gap-5">
-                        <a href="<?php echo base_url(); ?>paciente/registrar" class="uppercase p-3 flex items-center bg-green-500 text-blue-50 max-w-max shadow-sm hover:shadow-lg rounded-full w-12 h-12 ">
-                            <svg width="64" height="64" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
+                        <a href="<?php echo base_url(); ?>paciente/registrar">
+                            <div class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full bg-green-500">
+                                <i class="fa fa-plus fa-2x"></i>
+                            </div>
                         </a>
                     </div>
                     <?php if (session()->get('no_access')) : ?>
@@ -21,7 +21,7 @@
         </div>
         <div class="block w-full overflow-x-auto">
             <!-- Projects table -->
-            <table id="example" class="items-center w-full bg-transparent border-collapse"  align="center">
+            <table id="example" class="items-center w-full bg-transparent border-collapse" align="center">
                 <thead>
                     <tr>
                         <th class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100">
@@ -39,7 +39,7 @@
                         <th class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100">
                             estado
                         </th>
-                        <th class=""  align="center">
+                        <th class="" align="center">
                             Acciones
                         </th>
                     </tr>
