@@ -3,12 +3,12 @@
         <div class="rounded-t mb-0 px-4 py-3 border-0">
             <div class="flex flex-wrap items-center">
                 <div class="relative w-full px-4 max-w-full flex-grow flex-1">
-                    <h3 class="font-semibold text-lg text-blueGray-700">
+                    <h3 class="font-semibold text-center text-4xl text-blueGray-700">
                         Listado de Pacientes
                     </h3>
                     <div class="grid gap-5">
                         <a href="<?php echo base_url(); ?>paciente/registrar" class="uppercase p-3 flex items-center bg-green-500 text-blue-50 max-w-max shadow-sm hover:shadow-lg rounded-full w-12 h-12 ">
-                            <svg width="32" height="32" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <svg width="64" height="64" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
                         </a>
@@ -74,8 +74,8 @@
 
                                 <td class="text-center" align="center">
                                     <a class="bg-blue-500 hover:bg-blue-700 text-white text-center font-bold py-2 px-4 rounded" href="<?= base_url() ?>paciente/editar/<?= $usuario['id_paciente'] ?>">Editar</a>
-                                    <a class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded" href="<?= base_url() ?>conyugue/editar/<?= $usuario['id_paciente'] ?>">Conyugue</a>
-                                    <a class="bg-green-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded" href="<?= base_url() ?>ficha/editar/<?= $usuario['id_paciente'] ?>">Ficha</a>
+                                    <!-- <a class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded" href="<?= base_url() ?>conyugue/editar/<?= $usuario['id_paciente'] ?>">Conyugue</a>
+                                    <a class="bg-green-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded" href="<?= base_url() ?>ficha/editar/<?= $usuario['id_paciente'] ?>">Ficha</a> -->
                                     <a class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" href="<?= base_url() ?>paciente/borrar/<?= $usuario['id_paciente'] ?>">eliminar</a>
                                 </td>
                             </tr>

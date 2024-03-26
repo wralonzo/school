@@ -32,16 +32,14 @@ class Estudiante extends BaseController
 	public function registrar()
 	{
 		helper(['form']);
-
-
 		if ($this->request->getPost()) {
 			$userModel = new Estudiante_model();
 			$data = array(
-				'correo' => $this->request->getVar('carnet'),
+				'correo' => $this->request->getVar('correo'),
 				'nombres' => $this->request->getVar('nombre'),
 				'apellidos' => $this->request->getVar('apellido'),
 				'contacto' => $this->request->getVar('lugar'),
-				'clave' => password_hash($this->request->getVar('carnet'), PASSWORD_DEFAULT),
+				'clave' => password_hash($this->request->getVar('clave'), PASSWORD_DEFAULT),
 				'role' => $this->request->getVar('role'),
 				'estado' => 1
 			);
@@ -57,6 +55,7 @@ class Estudiante extends BaseController
 				'edad' => $this->request->getVar('edad'),
 				'lugar' => $this->request->getVar('lugar'),
 				'genero' => $this->request->getVar('genero'),
+				'estado' => $this->request->getVar('estado'),
 				'id_usuario' => $user_id
 			];
 			$userModel->save($data);
@@ -83,17 +82,8 @@ class Estudiante extends BaseController
 				. view('estudiante/editar', $data)
 				. view('capas/footer');
 		}
-		$data = [
-			'carnet' => $this->request->getVar('carnet'),
-			'nombre' => $this->request->getVar('nombre'),
-			'apellido' => $this->request->getVar('apellido'),
-			'semestre' => $this->request->getVar('semestre'),
-			'edad' => $this->request->getVar('edad'),
-			'lugar' => $this->request->getVar('lugar'),
-			'genero' => $this->request->getVar('genero'),
-		];
 		$dataModel->where('id_estudiante', $id_cliente)
-			->set($data)
+			->set($this->request->getVar())
 			->update();
 		$this->session->setFlashdata('no_access', 'El registro ha sido modificado con éxito');
 		return redirect()->to('/estudiante/display');

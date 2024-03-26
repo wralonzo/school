@@ -12,7 +12,8 @@
           <input type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="Correo" name="correo" />
         </div>
         <div class="relative w-full mb-3 px-5">
-          <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="grid-password">Password</label><input type="password" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="Password" name="clave" />
+          <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="grid-password">Contraseña</label>
+          <input type="password" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="Password" name="clave" />
         </div>
         <div class="relative w-full mb-3 px-5">
           <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="grid-password">Nombres</label>
@@ -28,7 +29,7 @@
         </div>
         <div class="relative w-full mb-3 px-5">
           <div id="pecesSelecr" class="col-span-6 sm:col-span-3 rounded-md border border-gray-300 bg-white py-2 px-3">
-            <label for="country" class="block text-sm font-medium text-gray-700">Tipo de usuarios</label>
+            <label for="country" class="block text-sm font-medium text-gray-700">Seleccione ROL</label>
             <select id="peces" name="role" autocomplete="country-name" class="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm">
               <option value="">Seleccionar</option>
               <option value="admin">Administrador</option>

@@ -5,7 +5,7 @@
 
     <form method="POST" action="<?= base_url() ?>test/testeditar/<?= $user_data['id_test_paciente'] ?>">
       <div class="relative w-full mb-2 px-5">
-        <h2 class="text-xs text-white font-bold text-2xl text-center mb-5">Detalle del conyugue</h2>
+        <h2 class="text-xs text-white font-bold text-2xl text-center mb-5">Test de paciente</h2>
       </div>
       <div id="main" class="grid grid-rows-2 grid-flow-col">
 
@@ -49,7 +49,7 @@
 
       <div class="text-center mt-6">
         <button class="bg-blueGray-800 text-white active:bg-blueGray-600 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full ease-linear transition-all duration-150" type="submit">
-          Registrar
+        Guardar cambios
         </button>
       </div>
     </form>

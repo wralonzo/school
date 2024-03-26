@@ -68,7 +68,7 @@ class Paciente extends BaseController
 		$dataModel = new Paciente_model();
 
 		helper(['form']);
-		$dataOne = $dataModel->where('estado', 'Activo')->where('id_paciente', $id_cliente)->first();
+		$dataOne = $dataModel->where('id_paciente', $id_cliente)->first();
 		if (!$this->request->getPost()) {
 			$data['user_data'] = $dataOne;
 			$estudiante = new Estudiante_model();

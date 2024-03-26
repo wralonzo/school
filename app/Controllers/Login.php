@@ -113,6 +113,7 @@ class Login extends BaseController
 			'correo'     => $this->request->getVar('correo'),
 			'role'     => $this->request->getVar('role'),
 			'contacto'     => $this->request->getVar('contacto'),
+			'clave' => password_hash($this->request->getVar('clave'), PASSWORD_DEFAULT)
 		];
 		$userModel->where('id', $id)
 			->set($dataUpdate)
