@@ -127,7 +127,6 @@ class Login extends BaseController
 		$userModel = new LoginModel();
 		$userModel->where('id', $id_cliente)
 			->delete();
-		$this->session->setFlashdata('no_access', 'Usuario eliminado');
-		return redirect()->to('/user/list');
+		return json_encode(true);
 	}
 }

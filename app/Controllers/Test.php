@@ -69,8 +69,7 @@ class Test extends BaseController
 		$userModel = new Test_model();
 		$userModel->where('id_test', $id_cliente)
 			->delete();
-		$this->session->setFlashdata('no_access', 'Registro eliminado');
-		return redirect()->to('/test/display');
+		return json_encode(true);
 	}
 
 	public function testdisplay()
@@ -155,7 +154,6 @@ class Test extends BaseController
 		$userModel = new Test_Paciente_model();
 		$userModel->where('id_test_paciente', $id_cliente)
 			->delete();
-		$this->session->setFlashdata('no_access', 'Registro eliminado');
-		return redirect()->to('/test/testdisplay');
+		return json_encode(true);
 	}
 }

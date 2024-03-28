@@ -91,10 +91,18 @@ class Estudiante extends BaseController
 
 	public function borrar($id_cliente)
 	{
-		$userModel = new Estudiante_model();
-		$userModel->where('id_estudiante', $id_cliente)
+
+		$estudiante = new Estudiante_model();
+		$dataOne = $estudiante->where('estado', 'Activo')->where('id_estudiante', $id_cliente)->first();
+
+		$userModel = new LoginModel();
+		$estudiante->where('id_estudiante', $id_cliente)
 			->delete();
-		$this->session->setFlashdata('no_access', 'Registro eliminado');
-		return redirect()->to('/estudiante/display');
+
+		$userModel->where('id', $dataOne['id_usuario'])
+			->delete();
+
+
+		return json_encode(true);
 	}
 }

@@ -21,6 +21,7 @@
     <script src="https://unpkg.com/jquery/dist/jquery.min.js"></script>
     <script src="https://unpkg.com/gridjs-jquery/dist/gridjs.production.min.js"></script>
     <link rel="stylesheet" type="text/css" href="https://unpkg.com/gridjs/dist/theme/mermaid.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style></style>
 </head>
 
@@ -168,5 +169,5 @@
                 </div>
             </nav>
             <!-- Header -->
-            <div class="relative bg-blue-600 md:pt-32 pb-32 pt-12">
+            <div class="relative bg-blue-600 md:pt-32 pb-24 pt-12">
                 <div class="px-4 md:px-10 mx-auto w-full">

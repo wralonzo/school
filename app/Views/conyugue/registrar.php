@@ -9,7 +9,7 @@
       <div id="main" class="grid grid-rows-3 grid-flow-col">
         <div class="relative w-full mb-3 px-5">
           <label class="block uppercase text-xs text-white font-bold mb-2" for="grid-password">Nombre</label>
-          <input type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="nombre" name="nombre" />
+          <input type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="nombre" name="nombrec" />
         </div>
 
         <div class="relative w-full mb-3 px-5">
@@ -18,31 +18,31 @@
         </div>
 
         <div class="relative w-full mb-3 px-5">
-          <label class="block uppercase  text-blueGray-600 text-xs font-bold mb-2" for="grid-password">observacion</label><input type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="observacion" name="observacion" />
+          <label class="block uppercase  text-blueGray-600 text-xs font-bold mb-2" for="grid-password">observacion</label><input type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="observacion" name="observacionc" />
         </div>
 
         <div class="relative w-full mb-3 px-5">
           <label class="block uppercase text-white text-xs font-bold mb-2" for="grid-password">escolaridad</label>
-          <input type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="escolaridad" name="escolaridad" />
+          <input type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="escolaridad" name="escolaridadc" />
         </div>
 
         <div class="relative w-full mb-3 px-5">
           <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="grid-password">edad</label>
-          <input type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="edad" name="edad" />
+          <input type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="edad" name="edadc" />
         </div>
 
         <div class="relative w-full mb-3 px-5">
           <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="grid-password">lugar familia</label>
-          <input type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="lugar familia" name="lugar_familia" />
+          <input type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="lugar familia" name="lugar_familiac" />
         </div>
 
         <div class="relative w-full mb-3 px-5">
           <label class="block uppercase text-white text-xs font-bold mb-2" for="grid-password">direccion</label>
-          <input type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="direccion" name="direccion" />
+          <input type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="direccion" name="direccionc" />
         </div>
         <div class="relative w-full mb-3 px-5">
           <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="grid-password">telefono</label>
-          <input type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="telefono" name="telefono" />
+          <input type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="telefono" name="telefonoc" />
         </div>
       </div>
 

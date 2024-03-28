@@ -19,6 +19,7 @@ $routes->match(['get', 'post'], '/paciente/registrar', 'Paciente::registrar', ['
 $routes->get('/paciente/editar/(:any)', 'Paciente::editar/$1',  ['filter' => 'authGuard']);
 $routes->get('/paciente/borrar/(:any)', 'Paciente::borrar/$1',  ['filter' => 'authGuard']);
 $routes->post('/paciente/editar/(:any)', 'Paciente::editar/$1',  ['filter' => 'authGuard']);
+$routes->get('/paciente/pdf/(:any)', 'Paciente::pdf/$1',  ['filter' => 'authGuard']);
 
 $routes->get('/estudiante/display', 'Estudiante::display',  ['filter' => 'authGuardAdmin']);
 $routes->match(['get', 'post'], '/estudiante/registrar', 'Estudiante::registrar', ['filter' => 'authGuardAdmin']);
@@ -52,14 +53,6 @@ $routes->get('/cita/editar/(:any)', 'Cita::editar/$1',  ['filter' => 'authGuard'
 $routes->post('/cita/editar/(:any)', 'Cita::editar/$1',  ['filter' => 'authGuard']);
 $routes->get('/cita/borrar/(:any)', 'Cita::borrar/$1',  ['filter' => 'authGuard']);
 $routes->get('/cita/activar/(:any)', 'Cita::activar/$1',  ['filter' => 'authGuard']);
-
-$routes->match(['get', 'post'], '/conyugue/registrar/(:any)', 'Conyugue::registrar/$1', ['filter' => 'authGuard']);
-$routes->get('/conyugue/editar/(:any)', 'Conyugue::editar/$1',  ['filter' => 'authGuard']);
-$routes->post('/conyugue/editar/(:any)', 'Conyugue::editar/$1',  ['filter' => 'authGuard']);
-
-$routes->match(['get', 'post'], '/ficha/registrar/(:any)', 'Ficha::registrar/$1', ['filter' => 'authGuard']);
-$routes->get('/ficha/editar/(:any)', 'Ficha::editar/$1',  ['filter' => 'authGuard']);
-$routes->post('/ficha/editar/(:any)', 'Ficha::editar/$1',  ['filter' => 'authGuard']);
 
 
 

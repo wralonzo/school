@@ -87,7 +87,6 @@ class Cita extends BaseController
 		$userModel = new Cita_model();
 		$userModel->where('id_cita', $id_cliente)
 			->delete();
-		$this->session->setFlashdata('no_access', 'Registro eliminado');
-		return redirect()->to('/cita/display');
+		return json_encode(true);
 	}
 }

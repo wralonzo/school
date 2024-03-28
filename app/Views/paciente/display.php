@@ -73,10 +73,10 @@
                                 </td>
 
                                 <td class="text-center" align="center">
-                                    <a class="bg-blue-500 hover:bg-blue-700 text-white text-center font-bold py-2 px-4 rounded" href="<?= base_url() ?>paciente/editar/<?= $usuario['id_paciente'] ?>">Editar</a>
-                                    <!-- <a class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded" href="<?= base_url() ?>conyugue/editar/<?= $usuario['id_paciente'] ?>">Conyugue</a>
-                                    <a class="bg-green-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded" href="<?= base_url() ?>ficha/editar/<?= $usuario['id_paciente'] ?>">Ficha</a> -->
-                                    <a class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" href="<?= base_url() ?>paciente/borrar/<?= $usuario['id_paciente'] ?>">eliminar</a>
+                                    <a class="bg-blue-500 hover:bg-blue-700 text-white text-center font-bold py-2 px-4 rounded" href="<?= base_url() ?>paciente/editar/<?= $usuario['id_paciente'] ?>"><i class="fas fa-pencil-alt"></i></a>
+                                    <!-- <a class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded" href="<?= base_url() ?>conyugue/editar/<?= $usuario['id_paciente'] ?>">Conyugue</a> -->
+                                    <a class="bg-green-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded" target="_blank" href="<?= base_url() ?>paciente/pdf/<?= $usuario['id_paciente'] ?>"><i class="fa fa-print"></i></a>
+                                    <a class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" onclick="deletePass(<?= $usuario['id_paciente'] ?>)"><i class="fas fa-trash-alt"></i></a>
                                 </td>
                             </tr>
                     <?php endforeach;
@@ -99,4 +99,35 @@
             enabled: true
         }
     });
+
+    function deletePass(id) {
+        Swal.fire({
+            title: "Quiere eliminar el registro?",
+            text: "Eliminar paciente!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Eliminar el registro!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch('<?=  base_url() ?>paciente/borrar/'+id, {
+                        method: 'GET',
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                    })
+                    .then(res => res.json())
+                    .then(res => {
+                        Swal.fire({
+                            title: "Eliminado!",
+                            text: "Registro eliminado.",
+                            icon: "success"
+                        });
+                        location.reload();
+                    });
+
+            }
+        });
+    }
 </script>

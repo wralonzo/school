@@ -18,7 +18,8 @@
         </div>
 
         <div class="relative w-full mb-3 px-5 ">
-          <label class="block uppercase  text-white text-xs font-bold mb-2" for="grid-password">motivo de consulta</label><input type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="motivo_consulta" name="motivo_consulta" />
+          <label class="block uppercase  text-white text-xs font-bold mb-2" for="grid-password">motivo de consulta</label>
+          <input type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="motivo_consulta" name="motivo_consulta" />
         </div>
 
         <div class="relative w-full mb-3 px-5 ">

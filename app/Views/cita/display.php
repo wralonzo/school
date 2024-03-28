@@ -83,7 +83,7 @@
                                             <i class="fas fa-pencil-alt"></i>
                                         </div>
                                     </a>
-                                    <a class="py-6" href="<?= base_url() ?>cita/borrar/<?= $cita['cita'] ?>">
+                                    <a class="py-6" onclick="deletePass(<?= $cita['cita'] ?>)">
                                         <div class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full bg-red-500">
                                             <i class="fas fa-trash-alt"></i>
                                         </div>
@@ -110,4 +110,35 @@
             enabled: true
         }
     });
+
+
+    function deletePass(id) {
+        Swal.fire({
+            title: "Quiere eliminar el registro?",
+            text: "Eliminar!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Eliminar el registro!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch('<?=  base_url() ?>cita/borrar/'+id, {
+                        method: 'GET',
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                    })
+                    .then(res => {
+                        Swal.fire({
+                            title: "Eliminado!",
+                            text: "Registro eliminado.",
+                            icon: "success"
+                        });
+                        location.reload();
+                    });
+
+            }
+        });
+    }
 </script>

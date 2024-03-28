@@ -22,10 +22,10 @@ class Conyugue extends BaseController
 	{
 		helper(['form']);
 		if ($this->request->getPost()) {
-			$userModel = new Conyugue_model();
-			$data = $this->request->getVar();
-			$data['paciente'] = $idPaciente;
-			$userModel->save($data);
+			$conyugueModel = new Conyugue_model();
+			$dataConyugue = $this->request->getVar();
+			$dataConyugue['paciente'] = $idPaciente;
+			$conyugueModel->save($dataConyugue);
 			$this->session->setFlashdata('no_access', 'El registro ha sido agregado con éxito');
 			return redirect()->to('/ficha/registrar/'.$idPaciente);
 		} else {
