@@ -2,12 +2,15 @@
 
 namespace App\Controllers;
 
+use App\Models\Cita_model;
 use App\Models\ClaseModel;
 use App\Models\ClientAsistenciaModel;
 use App\Models\ClientModel;
+use App\Models\Estudiante_model;
 use App\Models\HorarioModel;
 use App\Models\LoginModel;
 use App\Models\MembresiaModel;
+use App\Models\Paciente_model;
 use App\Models\ReservacionModel;
 
 class Home extends BaseController
@@ -29,8 +32,16 @@ class Home extends BaseController
 		// $data['membresia'] = $membresia->get()->getNumRows();
 		// $data['horario'] = $horario->get()->getNumRows();
 		// $data['asistencia'] = $Asistencia->get()->getNumRows();
+        $userModel = new  LoginModel();
+        $estudianteModel = new Estudiante_model();
+        $pacienteModel = new Paciente_model();
+        $citasModel = new Cita_model();
+        $data['usuarios'] = $userModel->get()->getNumRows();
+        $data['estudiantes'] = $estudianteModel->get()->getNumRows();
+        $data['pacientes'] = $pacienteModel->get()->getNumRows();
+        $data['citas'] = $citasModel->get()->getNumRows();
         return view('capas/cabecera')
-        .view('capas/menu')
+        .view('capas/menu', $data)
         .view('capas/footer');
     }
 }

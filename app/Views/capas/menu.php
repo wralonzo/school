@@ -11,7 +11,7 @@
                   Usuarios
                 </h5>
                 <span class="font-semibold text-xl text-blueGray-700">
-                  350,897
+                  <?= $usuarios ?>
                 </span>
               </div>
               <div class="relative w-auto pl-4 flex-initial">
@@ -22,10 +22,10 @@
             </div>
             <p class="text-sm text-blueGray-400 mt-4">
               <span class="text-emerald-500 mr-2">
-                <i class="fas fa-user-up"></i> 3.48%
+                <i class="fas fa-arrow-up"></i>
               </span>
               <span class="whitespace-nowrap">
-                Since last month
+                Ver usuarios
               </span>
             </p>
           </div>
@@ -42,7 +42,7 @@
                   Estudiantes
                 </h5>
                 <span class="font-semibold text-xl text-blueGray-700">
-                  2,356
+                  <?= $estudiantes  ?>
                 </span>
               </div>
               <div class="relative w-auto pl-4 flex-initial">
@@ -53,9 +53,9 @@
             </div>
             <p class="text-sm text-blueGray-400 mt-4">
               <span class="text-red-500 mr-2">
-                <i class="fas fa-arrow-down"></i> 3.48%
+                <i class="fas fa-arrow-down"></i>
               </span>
-              <span class="whitespace-nowrap"> Since last week </span>
+              <span class="whitespace-nowrap">Ver estudiantes </span>
             </p>
           </div>
         </a>
@@ -71,7 +71,7 @@
                   Pacientes
                 </h5>
                 <span class="font-semibold text-xl text-blueGray-700">
-                  924
+                  <?= $pacientes ?>
                 </span>
               </div>
               <div class="relative w-auto pl-4 flex-initial">
@@ -82,9 +82,9 @@
             </div>
             <p class="text-sm text-blueGray-400 mt-4">
               <span class="text-orange-500 mr-2">
-                <i class="fas fa-arrow-down"></i> 1.10%
+                <i class="fas fa-arrow-down"></i>
               </span>
-              <span class="whitespace-nowrap"> Since yesterday </span>
+              <span class="whitespace-nowrap"> Ver pacientes </span>
             </p>
           </div>
         </a>
@@ -100,7 +100,7 @@
                   Citas
                 </h5>
                 <span class="font-semibold text-xl text-blueGray-700">
-                  49,65%
+                  <?= $citas ?>
                 </span>
               </div>
               <div class="relative w-auto pl-4 flex-initial">
@@ -111,10 +111,10 @@
             </div>
             <p class="text-sm text-blueGray-400 mt-4">
               <span class="text-emerald-500 mr-2">
-                <i class="fas fa-arrow-up"></i> 12%
+                <i class="fas fa-arrow-up"></i>
               </span>
               <span class="whitespace-nowrap">
-                Since last month
+                Ver citas
               </span>
             </p>
           </div>
@@ -127,7 +127,7 @@
 </div>
 <center>
   <div class="px-4 md:px-12 mx-auto w-full -m-24">
-    <div class="flex flex-wrap">
+    <!-- <div class="flex flex-wrap">
       <div class="w-full xl:w-8/12 mb-12 xl:mb-0 px-4">
         <div class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded bg-blueGray-700">
           <div class="rounded-t mb-0 px-4 py-3 bg-transparent">
@@ -144,14 +144,14 @@
           </div>
           <div class="p-4 flex-auto">
             <!-- Chart -->
-            <div class="relative h-350-px">
-              <canvas id="line-chart"></canvas>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="relative h-350-px">
+      <canvas id="line-chart"></canvas>
     </div>
-    <footer class="block py-4">
+  </div>
+  </div>
+  </div>
+  </div> -->
+  <!-- <footer class="block py-4">
       <div class="container mx-auto px-4">
         <hr class="mb-4 border-b-1 border-blueGray-200" />
         <div class="flex flex-wrap items-center md:justify-between justify-center">
@@ -164,7 +164,7 @@
             </div>
         </div>
       </div>
-    </footer>
+    </footer> -->
   </div>
 </center>
 </div>
@@ -201,193 +201,193 @@
   (function() {
     /* Chart initialisations */
     /* Line Chart */
-    var config = {
-      type: "line",
-      data: {
-        labels: [
-          "January",
-          "February",
-          "March",
-          "April",
-          "May",
-          "June",
-          "July"
-        ],
-        datasets: [{
-            label: new Date().getFullYear(),
-            backgroundColor: "#4c51bf",
-            borderColor: "#4c51bf",
-            data: [65, 78, 66, 44, 56, 67, 75],
-            fill: false
-          },
-          {
-            label: new Date().getFullYear() - 1,
-            fill: false,
-            backgroundColor: "#fff",
-            borderColor: "#fff",
-            data: [40, 68, 86, 74, 56, 60, 87]
-          }
-        ]
-      },
-      options: {
-        maintainAspectRatio: false,
-        responsive: true,
-        title: {
-          display: false,
-          text: "Sales Charts",
-          fontColor: "white"
-        },
-        legend: {
-          labels: {
-            fontColor: "white"
-          },
-          align: "end",
-          position: "bottom"
-        },
-        tooltips: {
-          mode: "index",
-          intersect: false
-        },
-        hover: {
-          mode: "nearest",
-          intersect: true
-        },
-        scales: {
-          xAxes: [{
-            ticks: {
-              fontColor: "rgba(255,255,255,.7)"
-            },
-            display: true,
-            scaleLabel: {
-              display: false,
-              labelString: "Month",
-              fontColor: "white"
-            },
-            gridLines: {
-              display: false,
-              borderDash: [2],
-              borderDashOffset: [2],
-              color: "rgba(33, 37, 41, 0.3)",
-              zeroLineColor: "rgba(0, 0, 0, 0)",
-              zeroLineBorderDash: [2],
-              zeroLineBorderDashOffset: [2]
-            }
-          }],
-          yAxes: [{
-            ticks: {
-              fontColor: "rgba(255,255,255,.7)"
-            },
-            display: true,
-            scaleLabel: {
-              display: false,
-              labelString: "Value",
-              fontColor: "white"
-            },
-            gridLines: {
-              borderDash: [3],
-              borderDashOffset: [3],
-              drawBorder: false,
-              color: "rgba(255, 255, 255, 0.15)",
-              zeroLineColor: "rgba(33, 37, 41, 0)",
-              zeroLineBorderDash: [2],
-              zeroLineBorderDashOffset: [2]
-            }
-          }]
-        }
-      }
-    };
-    var ctx = document.getElementById("line-chart").getContext("2d");
-    window.myLine = new Chart(ctx, config);
+    // var config = {
+    //   type: "line",
+    //   data: {
+    //     labels: [
+    //       "January",
+    //       "February",
+    //       "March",
+    //       "April",
+    //       "May",
+    //       "June",
+    //       "July"
+    //     ],
+    //     datasets: [{
+    //         label: new Date().getFullYear(),
+    //         backgroundColor: "#4c51bf",
+    //         borderColor: "#4c51bf",
+    //         data: [65, 78, 66, 44, 56, 67, 75],
+    //         fill: false
+    //       },
+    //       {
+    //         label: new Date().getFullYear() - 1,
+    //         fill: false,
+    //         backgroundColor: "#fff",
+    //         borderColor: "#fff",
+    //         data: [40, 68, 86, 74, 56, 60, 87]
+    //       }
+    //     ]
+    //   },
+    //   options: {
+    //     maintainAspectRatio: false,
+    //     responsive: true,
+    //     title: {
+    //       display: false,
+    //       text: "Sales Charts",
+    //       fontColor: "white"
+    //     },
+    //     legend: {
+    //       labels: {
+    //         fontColor: "white"
+    //       },
+    //       align: "end",
+    //       position: "bottom"
+    //     },
+    //     tooltips: {
+    //       mode: "index",
+    //       intersect: false
+    //     },
+    //     hover: {
+    //       mode: "nearest",
+    //       intersect: true
+    //     },
+    //     scales: {
+    //       xAxes: [{
+    //         ticks: {
+    //           fontColor: "rgba(255,255,255,.7)"
+    //         },
+    //         display: true,
+    //         scaleLabel: {
+    //           display: false,
+    //           labelString: "Month",
+    //           fontColor: "white"
+    //         },
+    //         gridLines: {
+    //           display: false,
+    //           borderDash: [2],
+    //           borderDashOffset: [2],
+    //           color: "rgba(33, 37, 41, 0.3)",
+    //           zeroLineColor: "rgba(0, 0, 0, 0)",
+    //           zeroLineBorderDash: [2],
+    //           zeroLineBorderDashOffset: [2]
+    //         }
+    //       }],
+    //       yAxes: [{
+    //         ticks: {
+    //           fontColor: "rgba(255,255,255,.7)"
+    //         },
+    //         display: true,
+    //         scaleLabel: {
+    //           display: false,
+    //           labelString: "Value",
+    //           fontColor: "white"
+    //         },
+    //         gridLines: {
+    //           borderDash: [3],
+    //           borderDashOffset: [3],
+    //           drawBorder: false,
+    //           color: "rgba(255, 255, 255, 0.15)",
+    //           zeroLineColor: "rgba(33, 37, 41, 0)",
+    //           zeroLineBorderDash: [2],
+    //           zeroLineBorderDashOffset: [2]
+    //         }
+    //       }]
+    //     }
+    //   }
+    // };
+    // var ctx = document.getElementById("line-chart").getContext("2d");
+    // window.myLine = new Chart(ctx, config);
 
-    /* Bar Chart */
-    config = {
-      type: "bar",
-      data: {
-        labels: [
-          "January",
-          "February",
-          "March",
-          "April",
-          "May",
-          "June",
-          "July"
-        ],
-        datasets: [{
-            label: new Date().getFullYear(),
-            backgroundColor: "#ed64a6",
-            borderColor: "#ed64a6",
-            data: [30, 78, 56, 34, 100, 45, 13],
-            fill: false,
-            barThickness: 8
-          },
-          {
-            label: new Date().getFullYear() - 1,
-            fill: false,
-            backgroundColor: "#4c51bf",
-            borderColor: "#4c51bf",
-            data: [27, 68, 86, 74, 10, 4, 87],
-            barThickness: 8
-          }
-        ]
-      },
-      options: {
-        maintainAspectRatio: false,
-        responsive: true,
-        title: {
-          display: false,
-          text: "Orders Chart"
-        },
-        tooltips: {
-          mode: "index",
-          intersect: false
-        },
-        hover: {
-          mode: "nearest",
-          intersect: true
-        },
-        legend: {
-          labels: {
-            fontColor: "rgba(0,0,0,.4)"
-          },
-          align: "end",
-          position: "bottom"
-        },
-        scales: {
-          xAxes: [{
-            display: false,
-            scaleLabel: {
-              display: true,
-              labelString: "Month"
-            },
-            gridLines: {
-              borderDash: [2],
-              borderDashOffset: [2],
-              color: "rgba(33, 37, 41, 0.3)",
-              zeroLineColor: "rgba(33, 37, 41, 0.3)",
-              zeroLineBorderDash: [2],
-              zeroLineBorderDashOffset: [2]
-            }
-          }],
-          yAxes: [{
-            display: true,
-            scaleLabel: {
-              display: false,
-              labelString: "Value"
-            },
-            gridLines: {
-              borderDash: [2],
-              drawBorder: false,
-              borderDashOffset: [2],
-              color: "rgba(33, 37, 41, 0.2)",
-              zeroLineColor: "rgba(33, 37, 41, 0.15)",
-              zeroLineBorderDash: [2],
-              zeroLineBorderDashOffset: [2]
-            }
-          }]
-        }
-      }
-    };
-    ctx = document.getElementById("bar-chart").getContext("2d");
-    window.myBar = new Chart(ctx, config);
+    // /* Bar Chart */
+    // config = {
+    //   type: "bar",
+    //   data: {
+    //     labels: [
+    //       "January",
+    //       "February",
+    //       "March",
+    //       "April",
+    //       "May",
+    //       "June",
+    //       "July"
+    //     ],
+    //     datasets: [{
+    //         label: new Date().getFullYear(),
+    //         backgroundColor: "#ed64a6",
+    //         borderColor: "#ed64a6",
+    //         data: [30, 78, 56, 34, 100, 45, 13],
+    //         fill: false,
+    //         barThickness: 8
+    //       },
+    //       {
+    //         label: new Date().getFullYear() - 1,
+    //         fill: false,
+    //         backgroundColor: "#4c51bf",
+    //         borderColor: "#4c51bf",
+    //         data: [27, 68, 86, 74, 10, 4, 87],
+    //         barThickness: 8
+    //       }
+    //     ]
+    //   },
+    //   options: {
+    //     maintainAspectRatio: false,
+    //     responsive: true,
+    //     title: {
+    //       display: false,
+    //       text: "Orders Chart"
+    //     },
+    //     tooltips: {
+    //       mode: "index",
+    //       intersect: false
+    //     },
+    //     hover: {
+    //       mode: "nearest",
+    //       intersect: true
+    //     },
+    //     legend: {
+    //       labels: {
+    //         fontColor: "rgba(0,0,0,.4)"
+    //       },
+    //       align: "end",
+    //       position: "bottom"
+    //     },
+    //     scales: {
+    //       xAxes: [{
+    //         display: false,
+    //         scaleLabel: {
+    //           display: true,
+    //           labelString: "Month"
+    //         },
+    //         gridLines: {
+    //           borderDash: [2],
+    //           borderDashOffset: [2],
+    //           color: "rgba(33, 37, 41, 0.3)",
+    //           zeroLineColor: "rgba(33, 37, 41, 0.3)",
+    //           zeroLineBorderDash: [2],
+    //           zeroLineBorderDashOffset: [2]
+    //         }
+    //       }],
+    //       yAxes: [{
+    //         display: true,
+    //         scaleLabel: {
+    //           display: false,
+    //           labelString: "Value"
+    //         },
+    //         gridLines: {
+    //           borderDash: [2],
+    //           drawBorder: false,
+    //           borderDashOffset: [2],
+    //           color: "rgba(33, 37, 41, 0.2)",
+    //           zeroLineColor: "rgba(33, 37, 41, 0.15)",
+    //           zeroLineBorderDash: [2],
+    //           zeroLineBorderDashOffset: [2]
+    //         }
+    //       }]
+    //     }
+    //   }
+    // };
+    // ctx = document.getElementById("bar-chart").getContext("2d");
+    // window.myBar = new Chart(ctx, config);
   })();
 </script>
