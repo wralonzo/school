@@ -4,9 +4,9 @@
             <div class="flex flex-wrap items-center">
                 <div class="relative w-full px-4 max-w-full flex-grow flex-1">
                     <h3 class="font-semibold text-4xl text-blueGray-700 text-center">
-                        Listado de usuarios
+                        Listado de Clases
                     </h3>
-                    <a href="<?php echo base_url(); ?>login/registrar">
+                    <a href="<?php echo base_url(); ?>class/registrar">
                         <div class="">
                             <i class="fa fa-plus fa-2x"></i>
                         </div>
@@ -22,11 +22,7 @@
                 <thead>
                     <tr>
                         <th>
-                            Usuario
-                        </th>
-                        <th> Rol
-                        </th>
-                        <th> Estado
+                            Nombre
                         </th>
                         <th>
                             Acciones
@@ -35,26 +31,18 @@
                 </thead>
                 <tbody>
 
-                    <?php foreach ($data as $usuario) : ?>
+                    <?php foreach ($data as $item) : ?>
                         <tr class="center-text">
                             <td>
                                 <span class="ml-3 font-bold text-blueGray-600">
-                                    <?= $usuario['user'] ?>
+                                    <?= $item['name'] ?>
                                 </span>
                             </td>
                             <td>
-                                <?= $usuario['role'] ?>
-
-                            </td>
-                            <td> <?= $usuario['estado']  == 1 ? 'Activo' : 'Inactivo' ?>
-
-                            </td>
-
-                            <td>
-                                <a class="py-6" href="<?= base_url() ?>user/editar/<?= $usuario['id_user'] ?>">
+                                <a class="py-6" href="<?= base_url() ?>class/editar/<?= $item['id_class'] ?>">
                                     <i class="fas fa-edit fa-fw me-3 text-primary"></i><span class="text-primary">
                                 </a>
-                                <a class="py-6" href="<?= base_url() ?>user/borrar/<?= $usuario['id_user'] ?>">
+                                <a class="py-6" href="<?= base_url() ?>class/borrar/<?= $item['id_class'] ?>">
                                     <i class="fas fa-trash fa-fw me-3 text-danger"></i><span class="text-red">
                                 </a>
                             </td>
@@ -71,7 +59,7 @@
     $("table#example").Grid({
         pagination: {
             enabled: true,
-            limit: 10,
+            limit: 5,
             summary: false
         },
         search: {

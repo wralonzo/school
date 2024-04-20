@@ -41,5 +41,12 @@ $routes->get('/cook/editar/(:any)', 'Cook::editar/$1',  ['filter' => 'authGuardA
 $routes->post('/cook/editar/(:any)', 'Cook::editar/$1',  ['filter' => 'authGuardAdmin']);
 $routes->get('/cook/borrar/(:any)', 'Cook::borrar/$1',  ['filter' => 'authGuardAdmin']);
 
+$routes->get('/class', 'Classes::display',  ['filter' => 'authGuardAdmin']);
+$routes->post('/class/registrar', 'Classes::registrar',['filter' => 'authGuardAdmin']);
+$routes->get('/class/registrar', 'Classes::registrar',['filter' => 'authGuardAdmin']);
+$routes->get('/class/editar/(:any)', 'Classes::editar/$1',  ['filter' => 'authGuardAdmin']);
+$routes->post('/class/editar/(:any)', 'Classes::editar/$1',  ['filter' => 'authGuardAdmin']);
+$routes->get('/class/borrar/(:any)', 'Classes::borrar/$1',  ['filter' => 'authGuardAdmin']);
+
 
 
