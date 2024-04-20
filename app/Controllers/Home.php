@@ -32,16 +32,16 @@ class Home extends BaseController
 		// $data['membresia'] = $membresia->get()->getNumRows();
 		// $data['horario'] = $horario->get()->getNumRows();
 		// $data['asistencia'] = $Asistencia->get()->getNumRows();
-        $userModel = new  LoginModel();
-        $estudianteModel = new Estudiante_model();
-        $pacienteModel = new Paciente_model();
-        $citasModel = new Cita_model();
-        $data['usuarios'] = $userModel->get()->getNumRows();
-        $data['estudiantes'] = $estudianteModel->get()->getNumRows();
-        $data['pacientes'] = $pacienteModel->get()->getNumRows();
-        $data['citas'] = $citasModel->get()->getNumRows();
-        return view('capas/cabecera')
-        .view('capas/menu', $data)
-        .view('capas/footer');
+        // $userModel = new  LoginModel();
+        // $estudianteModel = new Estudiante_model();
+        // $pacienteModel = new Paciente_model();
+        // $citasModel = new Cita_model();
+        // $data['usuarios'] = $userModel->get()->getNumRows();
+        // $data['estudiantes'] = $estudianteModel->get()->getNumRows();
+        // $data['pacientes'] = $pacienteModel->get()->getNumRows();
+        // $data['citas'] = $citasModel->get()->getNumRows();
+        return view('layer/head')
+        // .view('capas/menu')
+        .view('layer/footer');
     }
 }

@@ -15,70 +15,56 @@ class Login extends BaseController
 	}
 	public function index()
 	{
-		return view('capas/header_login')
-			. view('login/login_view');
+		return view('user/index');
 	}
 	public function login()
 	{
-
 		$userModel = new LoginModel();
 		$email = $this->request->getVar('txtUsuario');
 		$password = $this->request->getVar('txtClave');
 
-		$data = $userModel->where('correo', $email)->orderBy('id', 'desc')->first();
+		$data = $userModel->where('user', $email)->first();
 
 		if ($data) {
-			$pass = $data['clave'];
+			$pass = $data['password'];
 			$authenticatePassword = password_verify($password, $pass);
 			if ($authenticatePassword) {
 				$ses_data = [
-					'id' => $data['id'],
+					'id_user' => $data['id_user'],
+					'user' => $data['user'],
 					'role' => $data['role'],
 					'logeado' => TRUE
 				];
 				$this->session->set($ses_data);
 				return redirect()->route('/');
 			} else {
-				$this->session->setFlashdata('msg', 'Password is incorrect.');
+				$this->session->setFlashdata('msg', 'Usuario incorrecto');
 				return redirect()->route('login');
 			}
 		} else {
-			$this->session->setFlashdata('msg', 'Email does not exist.');
+			$this->session->setFlashdata('msg', 'Usuario incorrecto');
 			return redirect()->route('login');
 		}
 	}
 
 	public function registrar()
 	{
-		helper(['form']);
-		$rules = [
-			'nombres'          => 'required|min_length[2]|max_length[50]',
-			'apellidos'          => 'required|min_length[2]|max_length[50]',
-			'contacto'          => 'required|min_length[2]|max_length[50]',
-			'correo'          => 'required|min_length[2]|max_length[50]',
-			'clave'          => 'required|min_length[2]|max_length[50]',
-			'role'          => 'required|min_length[2]|max_length[50]',
-		];
-
-		if ($this->validate($rules)) {
+		if ($this->request->getPost()) {
 			$userModel = new LoginModel();
 			$data = [
-				'nombres'     => $this->request->getVar('nombres'),
-				'apellidos'     => $this->request->getVar('apellidos'),
-				'correo'     => $this->request->getVar('correo'),
-				'role'     => $this->request->getVar('role'),
-				'contacto'     => $this->request->getVar('contacto'),
-				'clave' => password_hash($this->request->getVar('clave'), PASSWORD_DEFAULT)
+				'user' => $this->request->getVar('user'),
+				'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT),
+				'role' => $this->request->getVar('role'),
 			];
 			$userModel->save($data);
 			return redirect()->to('/user/list');
 		} else {
-			$data['validation'] = $this->validator;
-			return view('capas/cabecera')
-				. view('login/registrar')
-				. view('capas/footer');
+			return view('layer/head')
+				. view('user/register')
+				. view('layer/footer');
 		}
 	}
+
 	public function logout()
 	{
 		$session = session();
@@ -89,34 +75,26 @@ class Login extends BaseController
 	public function display()
 	{
 		$userModel = new LoginModel();
-		$dataClient = $userModel->where('estado', 1)->orderBy('id', 'desc')->findAll();
+		$dataClient = $userModel->findAll();
 		$data['data'] = $dataClient;
-		return view('capas/cabecera') .
+		return view('layer/head') .
 			view('login/listar_usuarios_view', $data)
-			. view('capas/footer');
+			. view('layer/footer');
 	}
 
 	public function editar($id)
 	{
 		helper(['form']);
 		$userModel = new LoginModel();
-		$dataClient = $userModel->where('estado', 1)->where('id', $id)->first();
+		$dataClient = $userModel->where('id_user', $id)->first();
 		if (!$this->request->getPost()) {
 			$data['user_data'] = $dataClient;
-			return view('capas/cabecera') .
+			return view('layer/head') .
 				view('login/editar', $data)
-				. view('capas/footer');
+				. view('layer/footer');
 		}
-		$dataUpdate = [
-			'nombres'     => $this->request->getVar('nombres'),
-			'apellidos'     => $this->request->getVar('apellidos'),
-			'correo'     => $this->request->getVar('correo'),
-			'role'     => $this->request->getVar('role'),
-			'contacto'     => $this->request->getVar('contacto'),
-			'clave' => password_hash($this->request->getVar('clave'), PASSWORD_DEFAULT)
-		];
-		$userModel->where('id', $id)
-			->set($dataUpdate)
+		$userModel->where('id_user', $id)
+			->set($this->request->getPost())
 			->update();
 		$this->session->setFlashdata('no_access', 'El registro ha sido modificado con éxito');
 		return redirect()->to('/user/list');
@@ -125,8 +103,9 @@ class Login extends BaseController
 	public function borrar($id_cliente)
 	{
 		$userModel = new LoginModel();
-		$userModel->where('id', $id_cliente)
+		$userModel->where('id_user', $id_cliente)
 			->delete();
-		return json_encode(true);
+		$this->session->setFlashdata('no_access', 'El registro ha sido eliminado con éxito');
+		return redirect()->to('/user/list');
 	}
 }

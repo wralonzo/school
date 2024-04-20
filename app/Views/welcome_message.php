@@ -1,4 +1,4 @@
-<style>
+<!-- <style>
 	th,
 	td {
 		padding: 40px;
@@ -94,4 +94,4 @@
 
 	</table>
 	</div>
-</section>
+</section> -->

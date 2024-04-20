@@ -38,3 +38,12 @@ function getFieldsValue($idCampo, $idPaciente)
     $output = $builder->get();
     return $output->getRow();
 }
+
+function getUserName($idCampo)
+{
+    $db  = \Config\Database::connect();
+    $builder = $db->table('user');
+    $builder->where('id_user', $idCampo);
+    $output = $builder->get();
+    return $output->getRow();
+}

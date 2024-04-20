@@ -29,7 +29,7 @@ class Database extends Config
         'hostname'     => '192.168.25.130',
         'username'     => 'root',
         'password'     => 'root',
-        'database'     => 'clinica',
+        'database'     => 'school',
         'DBDriver'     => 'MySQLi',
         'DBPrefix'     => '',
         'pConnect'     => false,

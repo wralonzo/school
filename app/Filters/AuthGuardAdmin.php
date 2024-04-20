@@ -14,7 +14,7 @@ class AuthGuardAdmin implements FilterInterface
             return redirect()
                 ->to('/login');
         }
-        if (session()->get('role') != 'admin')
+        if (session()->get('role') != 'Administrador')
         {
             session()->setFlashdata('no_access', 'Sin acceso a este modulo');
             return redirect()

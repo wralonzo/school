@@ -7,7 +7,7 @@
                         Listado de usuarios
                     </h3>
                     <a href="<?php echo base_url(); ?>login/registrar">
-                        <div class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full bg-green-500">
+                        <div class="">
                             <i class="fa fa-plus fa-2x"></i>
                         </div>
                     </a>
@@ -17,22 +17,16 @@
                 </div>
             </div>
         </div>
-        <div class="block w-full overflow-x-auto">
-            <!-- Projects table -->
-            <table id="example" class="items-center w-full bg-transparent border-collapse">
+        <div class="mx-4">
+            <table id="example" class="table table-bordered">
                 <thead>
                     <tr>
-                        <th class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100">
-                            Nombres
+                        <th>
+                            Usuario
                         </th>
-                        <th class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100">
-                            Rol
+                        <th> Rol
                         </th>
-                        <th class="">
-                            Contacto
-                        </th>
-                        <th class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100">
-                            Correo
+                        <th> Estado
                         </th>
                         <th>
                             Acciones
@@ -43,36 +37,25 @@
 
                     <?php foreach ($data as $usuario) : ?>
                         <tr class="center-text">
-                            <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left flex items-center">
-
+                            <td>
                                 <span class="ml-3 font-bold text-blueGray-600">
-                                    <?= $usuario['nombres'] ?> <?= $usuario['apellidos'] ?>
+                                    <?= $usuario['user'] ?>
                                 </span>
                             </td>
-                            <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                <i class="fas fa-circle text-orange-500 mr-2"></i>
+                            <td>
                                 <?= $usuario['role'] ?>
 
                             </td>
-                            <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                <?= $usuario['contacto'] ?>
-
-                            </td>
-                            <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                <?= $usuario['correo'] ?>
+                            <td> <?= $usuario['estado']  == 1 ? 'Activo' : 'Inactivo' ?>
 
                             </td>
 
-                            <td class="flex flex-row min-h-screen justify-center items-center">
-                                <a class="py-6" href="<?= base_url() ?>user/editar/<?= $usuario['id'] ?>">
-                                    <div class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full bg-blue-500">
-                                        <i class="fas fa-pencil-alt"></i>
-                                    </div>
+                            <td>
+                                <a class="py-6" href="<?= base_url() ?>user/editar/<?= $usuario['id_user'] ?>">
+                                    <i class="fas fa-edit fa-fw me-3 text-primary"></i><span class="text-primary">
                                 </a>
-                                <a class="py-6"onclick="deletePass(<?= $usuario['id'] ?>)">
-                                    <div class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full bg-red-500">
-                                        <i class="fas fa-trash-alt"></i>
-                                    </div>
+                                <a class="py-6" href="<?= base_url() ?>user/borrar/<?= $usuario['id_user'] ?>">
+                                    <i class="fas fa-trash fa-fw me-3 text-danger"></i><span class="text-red">
                                 </a>
                             </td>
                         </tr>
@@ -103,35 +86,4 @@
             },
         }
     });
-
-
-    function deletePass(id) {
-        Swal.fire({
-            title: "Quiere eliminar el registro?",
-            text: "Aliminar paciente!",
-            icon: "warning",
-            showCancelButton: true,
-            confirmButtonColor: "#3085d6",
-            cancelButtonColor: "#d33",
-            confirmButtonText: "Eliminar el registro!"
-        }).then((result) => {
-            if (result.isConfirmed) {
-                fetch('<?=  base_url() ?>user/borrar/'+id, {
-                        method: 'GET',
-                        headers: {
-                            "Content-Type": "application/json",
-                        },
-                    })
-                    .then(res => {
-                        Swal.fire({
-                            title: "Eliminado!",
-                            text: "Registro eliminado.",
-                            icon: "success"
-                        });
-                        location.reload();
-                    });
-
-            }
-        });
-    }
 </script>
