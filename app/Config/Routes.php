@@ -27,5 +27,12 @@ $routes->post('/father/editar/(:any)', 'Father::editar/$1',  ['filter' => 'authG
 $routes->get('/father/borrar/(:any)', 'Father::borrar/$1',  ['filter' => 'authGuardAdmin']);
 
 
+$routes->get('/teacher', 'Teacher::display',  ['filter' => 'authGuardAdmin']);
+$routes->post('/teacher/registrar', 'Teacher::registrar',['filter' => 'authGuardAdmin']);
+$routes->get('/teacher/registrar', 'Teacher::registrar',['filter' => 'authGuardAdmin']);
+$routes->get('/teacher/editar/(:any)', 'Teacher::editar/$1',  ['filter' => 'authGuardAdmin']);
+$routes->post('/teacher/editar/(:any)', 'Teacher::editar/$1',  ['filter' => 'authGuardAdmin']);
+$routes->get('/teacher/borrar/(:any)', 'Teacher::borrar/$1',  ['filter' => 'authGuardAdmin']);
+
 
 
