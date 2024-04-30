@@ -94,7 +94,7 @@
           <a href="<?php echo base_url() ?>father" class="list-group-item list-group-item-action py-2 ripple color-change"><i class="fas fa-chart-line fa-fw me-3 text-white"></i><span class="text-white">Padres</span></a>
           <a href="<?php echo base_url() ?>teacher" class="list-group-item list-group-item-action py-2 ripple color-change"><i class="fas fa-calendar fa-fw me-3 text-white"></i><span class="text-white">Maestros</span></a>
           <a href="<?php echo base_url() ?>" class="list-group-item list-group-item-action py-2 ripple"><i class="fas fa-chart-pie fa-fw me-3 text-white"></i><span class="text-white">Alumnos</span></a>
-          <a href="#" class="list-group-item list-group-item-action py-2 ripple color-change"><i class="fas fa-chart-bar fa-fw me-3 text-white"></i><span class="text-white">Eventos</span></a>
+          <a href="<?php echo base_url() ?>event" class="list-group-item list-group-item-action py-2 ripple color-change"><i class="fas fa-chart-bar fa-fw me-3 text-white"></i><span class="text-white">Eventos</span></a>
           <a href="<?php echo base_url() ?>class" class="list-group-item list-group-item-action py-2 ripple color-change"><i class="fas fa-globe fa-fw me-3 text-white"></i><span class="text-white">Clases</span></a>
           <a href="<?php echo base_url() ?>cook" class="list-group-item list-group-item-action py-2 ripple color-change"><i class="fas fa-building fa-fw me-3 text-white"></i><span class="text-white">Comidas</span></a>
         </div>

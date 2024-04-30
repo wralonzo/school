@@ -48,5 +48,12 @@ $routes->get('/class/editar/(:any)', 'Classes::editar/$1',  ['filter' => 'authGu
 $routes->post('/class/editar/(:any)', 'Classes::editar/$1',  ['filter' => 'authGuard']);
 $routes->get('/class/borrar/(:any)', 'Classes::borrar/$1',  ['filter' => 'authGuard']);
 
+$routes->get('/event', 'Events::display',  ['filter' => 'authGuard']);
+$routes->post('/event/registrar', 'Events::registrar',['filter' => 'authGuard']);
+$routes->get('/event/registrar', 'Events::registrar',['filter' => 'authGuard']);
+$routes->get('/event/editar/(:any)', 'Events::editar/$1',  ['filter' => 'authGuard']);
+$routes->post('/event/editar/(:any)', 'Events::editar/$1',  ['filter' => 'authGuard']);
+$routes->get('/event/borrar/(:any)', 'Events::borrar/$1',  ['filter' => 'authGuard']);
+
 
 
