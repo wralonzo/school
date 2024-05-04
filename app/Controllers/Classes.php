@@ -2,7 +2,9 @@
 
 namespace App\Controllers;
 
+use App\Models\AttendanceClassModel;
 use App\Models\ClassModel;
+use App\Models\StudentModel;
 
 class Classes extends BaseController
 {
@@ -64,5 +66,26 @@ class Classes extends BaseController
 			->delete();
 		$this->session->setFlashdata('no_access', 'El registro ha sido eliminado con éxito');
 		return redirect()->to('/class');
+	}
+
+
+	public function attendance(){		
+		if ($this->request->getPost()) {
+			$modelAttendace = new AttendanceClassModel();
+			$dataPost = $this->request->getPost();
+			$modelAttendace->save($dataPost);
+			$this->session->setFlashdata('no_access', 'El registro ha sido creado con éxito');
+			return redirect()->to('/event');
+		} else {
+			$modelAttendace = new ClassModel();
+			$studentModel = new StudentModel();
+			$events = $modelAttendace->findAll();
+			$students = $studentModel->findAll();
+			$data['class'] = $events;
+			$data['students'] = $students;
+			return view('layer/head')
+				. view('class/attendance', $data)
+				. view('layer/footer');
+		}		
 	}
 }

@@ -48,6 +48,13 @@ $routes->get('/class/editar/(:any)', 'Classes::editar/$1',  ['filter' => 'authGu
 $routes->post('/class/editar/(:any)', 'Classes::editar/$1',  ['filter' => 'authGuard']);
 $routes->get('/class/borrar/(:any)', 'Classes::borrar/$1',  ['filter' => 'authGuard']);
 
+$routes->get('/class/attendance/', 'Classes::attendance/',  ['filter' => 'authGuard']);
+$routes->post('/class/attendance/', 'Classes::attendance/',  ['filter' => 'authGuard']);
+$routes->get('/class/attendance/list', 'Classes::list/',  ['filter' => 'authGuard']);
+$routes->get('/class/editar/(:any)', 'Classes::listeditar/$1',  ['filter' => 'authGuard']);
+$routes->post('/class/editar/(:any)', 'Classes::listeditar/$1',  ['filter' => 'authGuard']);
+$routes->get('/class/attendance/borrar/(:any)', 'Classes::listborrar/$1',  ['filter' => 'authGuard']);
+
 $routes->get('/event', 'Events::display',  ['filter' => 'authGuard']);
 $routes->post('/event/registrar', 'Events::registrar',['filter' => 'authGuard']);
 $routes->get('/event/registrar', 'Events::registrar',['filter' => 'authGuard']);
@@ -55,5 +62,16 @@ $routes->get('/event/editar/(:any)', 'Events::editar/$1',  ['filter' => 'authGua
 $routes->post('/event/editar/(:any)', 'Events::editar/$1',  ['filter' => 'authGuard']);
 $routes->get('/event/borrar/(:any)', 'Events::borrar/$1',  ['filter' => 'authGuard']);
 
+$routes->get('/event/attendance/', 'Events::attendance/',  ['filter' => 'authGuard']);
+$routes->post('/event/attendance/', 'Events::attendance/',  ['filter' => 'authGuard']);
+$routes->get('/event/attendance/list', 'Events::list/',  ['filter' => 'authGuard']);
+$routes->get('/event/editar/(:any)', 'Events::listeditar/$1',  ['filter' => 'authGuard']);
+$routes->post('/event/editar/(:any)', 'Events::listeditar/$1',  ['filter' => 'authGuard']);
+$routes->get('/event/attendance/borrar/(:any)', 'Events::listborrar/$1',  ['filter' => 'authGuard']);
 
-
+$routes->get('/student', 'Student::display',  ['filter' => 'authGuard']);
+$routes->post('/student/registrar', 'Student::registrar',['filter' => 'authGuard']);
+$routes->get('/student/registrar', 'Student::registrar',['filter' => 'authGuard']);
+$routes->get('/student/editar/(:any)', 'Student::editar/$1',  ['filter' => 'authGuard']);
+$routes->post('/student/editar/(:any)', 'Student::editar/$1',  ['filter' => 'authGuard']);
+$routes->get('/student/borrar/(:any)', 'Student::borrar/$1',  ['filter' => 'authGuard']);

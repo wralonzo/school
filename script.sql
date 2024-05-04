@@ -58,7 +58,8 @@ CREATE TABLE `children` (
   `name` varchar(250) NOT NULL,
   `father` int(11) NOT NULL,
   `user` int(11) NOT NULL,
-  `alert_cook` varchar(250) NOT NULL
+  `alert_cook` varchar(250) NOT NULL,
+  `alert` varchar(250) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -226,6 +227,10 @@ ALTER TABLE `teacher`
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id_user`);
 
+ALTER TABLE `attendance_event`
+  ADD PRIMARY KEY (`id_att_event`);
+
+
 --
 -- AUTO_INCREMENT de las tablas volcadas
 --
@@ -235,6 +240,9 @@ ALTER TABLE `user`
 --
 ALTER TABLE `attendance_class`
   MODIFY `id_attendance_class` int(11) NOT NULL AUTO_INCREMENT;
+
+ALTER TABLE `attendance_event`
+  MODIFY `id_att_event` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `children`
