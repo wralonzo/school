@@ -4,9 +4,9 @@
             <div class="flex flex-wrap items-center">
                 <div class="relative w-full px-4 max-w-full flex-grow flex-1">
                     <h3 class="font-semibold text-4xl text-blueGray-700 text-center">
-                        Listado de Clases
+                        Listado de asistencia a clases
                     </h3>
-                    <a href="<?php echo base_url(); ?>class/registrar">
+                    <a href="<?php echo base_url(); ?>class/attendance">
                         <div class="">
                             <i class="fa fa-plus fa-2x"></i>
                         </div>
@@ -22,7 +22,13 @@
                 <thead>
                     <tr>
                         <th>
-                            Nombre
+                            Class
+                        </th>
+                        <th>
+                            Alumno
+                        </th>
+                        <th>
+                            Fecha
                         </th>
                         <th>
                             Acciones
@@ -35,14 +41,24 @@
                         <tr class="center-text">
                             <td>
                                 <span class="ml-3 font-bold text-blueGray-600">
-                                    <?= $item['name'] ?>
+                                    <?= $item['class'] ?>
                                 </span>
                             </td>
                             <td>
-                                <a class="py-6" href="<?= base_url() ?>class/editar/<?= $item['id_class'] ?>">
+                                <span class="ml-3 font-bold text-blueGray-600">
+                                    <?= $item['children'] ?>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="ml-3 font-bold text-blueGray-600">
+                                    <?= $item['createdat'] ?>
+                                </span>
+                            </td>
+                            <td>
+                                <!-- <a class="py-6" href="<?= base_url() ?>event/editar/<?= $item['id_attendance_class'] ?>">
                                     <i class="fas fa-edit fa-fw me-3 text-primary"></i><span class="text-primary">
-                                </a>
-                                <a class="py-6" href="<?= base_url() ?>class/borrar/<?= $item['id_class'] ?>">
+                                </a> -->
+                                <a class="py-6" href="<?= base_url() ?>class/attendance/borrar/<?= $item['id_attendance_class'] ?>">
                                     <i class="fas fa-trash fa-fw me-3 text-danger"></i><span class="text-red">
                                 </a>
                             </td>

@@ -97,7 +97,8 @@
           <a href="<?php echo base_url() ?>event" class="list-group-item list-group-item-action py-2 ripple color-change"><i class="fas fa-chart-bar fa-fw me-3 text-white"></i><span class="text-white">Eventos</span></a>
           <a href="<?php echo base_url() ?>class" class="list-group-item list-group-item-action py-2 ripple color-change"><i class="fas fa-globe fa-fw me-3 text-white"></i><span class="text-white">Clases</span></a>
           <a href="<?php echo base_url() ?>cook" class="list-group-item list-group-item-action py-2 ripple color-change"><i class="fas fa-building fa-fw me-3 text-white"></i><span class="text-white">Comidas</span></a>
-          <a href="<?php echo base_url() ?>event/attendance/list" class="list-group-item list-group-item-action py-2 ripple color-change"><i class="fas fa-chart-line fa-fw me-3 text-white"></i><span class="text-white">Asistencia a eventos</span></a>
+          <a href="<?php echo base_url() ?>event/attendance/list" class="list-group-item list-group-item-action py-2 ripple color-change"><i class="fas fa-chart-line fa-fw me-3 text-white"></i><span class="text-white">Asistencia evento</span></a>
+          <a href="<?php echo base_url() ?>class/attendance/list" class="list-group-item list-group-item-action py-2 ripple color-change"><i class="fas fa-calendar fa-fw me-3 text-white"></i><span class="text-white">Asistencia clase</span></a>
         </div>
       </div>
     </nav>

@@ -10,9 +10,10 @@ class Classes extends BaseController
 {
 	protected $helpers = ['form', 'url'];
 	public $session;
+	private $db;
 	public function __construct()
 	{
-		// $this->db = db_connect(); // Loading database
+		$this->db = db_connect();
 		$this->session = session();
 	}
 
@@ -75,7 +76,7 @@ class Classes extends BaseController
 			$dataPost = $this->request->getPost();
 			$modelAttendace->save($dataPost);
 			$this->session->setFlashdata('no_access', 'El registro ha sido creado con éxito');
-			return redirect()->to('/event');
+			return redirect()->to('class/attendance/list');
 		} else {
 			$modelAttendace = new ClassModel();
 			$studentModel = new StudentModel();
@@ -87,5 +88,28 @@ class Classes extends BaseController
 				. view('class/attendance', $data)
 				. view('layer/footer');
 		}		
+	}
+
+	public function list()
+	{
+		$list = $this->db->table("attendance_class as at")
+		->select('at.id_attendance_class, cla.name as class, chi.name as children, at.createdat')
+		->join('class as cla', 'cla.id_class = at.class')
+		->join('children as chi', 'chi.id_children = at.children')
+		// ->orderBy('hr.id_horario', 'desc')
+		->get()->getResultArray();
+		$data['data'] = $list;
+		return view('layer/head') .
+			view('class/list', $data)
+			. view('layer/footer');
+	}
+
+	public function listborrar($id_cliente)
+	{
+		$CookModel = new AttendanceClassModel();
+		$CookModel->where('id_attendance_class', $id_cliente)
+			->delete();
+		$this->session->setFlashdata('no_access', 'El registro ha sido eliminado con éxito');
+		return redirect()->to('class/attendance/list');
 	}
 }
