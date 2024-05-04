@@ -41,6 +41,13 @@ $routes->get('/cook/editar/(:any)', 'Cook::editar/$1',  ['filter' => 'authGuard'
 $routes->post('/cook/editar/(:any)', 'Cook::editar/$1',  ['filter' => 'authGuard']);
 $routes->get('/cook/borrar/(:any)', 'Cook::borrar/$1',  ['filter' => 'authGuard']);
 
+$routes->get('/cook/attendance/', 'Cook::attendance/',  ['filter' => 'authGuard']);
+$routes->post('/cook/attendance/', 'Cook::attendance/',  ['filter' => 'authGuard']);
+$routes->get('/cook/attendance/list', 'Cook::list/',  ['filter' => 'authGuard']);
+$routes->get('/cook/editar/(:any)', 'Cook::listeditar/$1',  ['filter' => 'authGuard']);
+$routes->post('/cook/editar/(:any)', 'Cook::listeditar/$1',  ['filter' => 'authGuard']);
+$routes->get('/cook/attendance/borrar/(:any)', 'Cook::listborrar/$1',  ['filter' => 'authGuard']);
+
 $routes->get('/class', 'Classes::display',  ['filter' => 'authGuard']);
 $routes->post('/class/registrar', 'Classes::registrar',['filter' => 'authGuard']);
 $routes->get('/class/registrar', 'Classes::registrar',['filter' => 'authGuard']);

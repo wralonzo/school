@@ -186,6 +186,7 @@ ALTER TABLE `children`
 --
 ALTER TABLE `class`
   ADD PRIMARY KEY (`id_class`);
+  
 
 --
 -- Indices de la tabla `cook`
@@ -238,6 +239,9 @@ ALTER TABLE `attendance_event`
 --
 -- AUTO_INCREMENT de la tabla `attendance_class`
 --
+ALTER TABLE `cook_children`
+  MODIFY `id_children_cook` int(11) NOT NULL AUTO_INCREMENT;
+
 ALTER TABLE `attendance_class`
   MODIFY `id_attendance_class` int(11) NOT NULL AUTO_INCREMENT;
 

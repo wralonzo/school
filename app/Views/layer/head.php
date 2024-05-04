@@ -86,7 +86,7 @@
     <!-- Sidebar -->
     <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-warning">
       <div class="position-sticky">
-        <div class="list-group list-group-flush mx-3 mt-4">
+        <div class="list-group list-group-flush mt-4">
           <a href="<?php echo base_url() ?>" class="list-group-item list-group-item-action py-2 ripple color-change" aria-current="true">
             <i class="fas fa-tachometer-alt fa-fw me-3 text-white"></i><span class="text-white">Home</span>
           </a>
@@ -99,6 +99,7 @@
           <a href="<?php echo base_url() ?>cook" class="list-group-item list-group-item-action py-2 ripple color-change"><i class="fas fa-building fa-fw me-3 text-white"></i><span class="text-white">Comidas</span></a>
           <a href="<?php echo base_url() ?>event/attendance/list" class="list-group-item list-group-item-action py-2 ripple color-change"><i class="fas fa-chart-line fa-fw me-3 text-white"></i><span class="text-white">Asistencia evento</span></a>
           <a href="<?php echo base_url() ?>class/attendance/list" class="list-group-item list-group-item-action py-2 ripple color-change"><i class="fas fa-calendar fa-fw me-3 text-white"></i><span class="text-white">Asistencia clase</span></a>
+          <a href="<?php echo base_url() ?>cook/attendance/list" class="list-group-item list-group-item-action py-2 ripple color-change"><i class="fas fa-globe fa-fw me-3 text-white"></i><span class="text-white">Registro de comidas</span></a>
         </div>
       </div>
     </nav>
