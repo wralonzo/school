@@ -90,16 +90,45 @@
           <a href="<?php echo base_url() ?>" class="list-group-item list-group-item-action py-2 ripple color-change" aria-current="true">
             <i class="fas fa-tachometer-alt fa-fw me-3 text-white"></i><span class="text-white">Home</span>
           </a>
-          <a href="<?php echo base_url() ?>user/list" class="list-group-item list-group-item-action py-2 ripple  color-change"><i class="fas fa-lock fa-fw me-3 text-white"></i><span class="text-white">Usuarios</span></a>
-          <a href="<?php echo base_url() ?>father" class="list-group-item list-group-item-action py-2 ripple color-change"><i class="fas fa-chart-line fa-fw me-3 text-white"></i><span class="text-white">Padres</span></a>
-          <a href="<?php echo base_url() ?>teacher" class="list-group-item list-group-item-action py-2 ripple color-change"><i class="fas fa-calendar fa-fw me-3 text-white"></i><span class="text-white">Maestros</span></a>
-          <a href="<?php echo base_url() ?>student" class="list-group-item list-group-item-action py-2 ripple"><i class="fas fa-chart-pie fa-fw me-3 text-white"></i><span class="text-white">Alumnos</span></a>
-          <a href="<?php echo base_url() ?>event" class="list-group-item list-group-item-action py-2 ripple color-change"><i class="fas fa-chart-bar fa-fw me-3 text-white"></i><span class="text-white">Eventos</span></a>
-          <a href="<?php echo base_url() ?>class" class="list-group-item list-group-item-action py-2 ripple color-change"><i class="fas fa-globe fa-fw me-3 text-white"></i><span class="text-white">Clases</span></a>
-          <a href="<?php echo base_url() ?>cook" class="list-group-item list-group-item-action py-2 ripple color-change"><i class="fas fa-building fa-fw me-3 text-white"></i><span class="text-white">Comidas</span></a>
-          <a href="<?php echo base_url() ?>event/attendance/list" class="list-group-item list-group-item-action py-2 ripple color-change"><i class="fas fa-chart-line fa-fw me-3 text-white"></i><span class="text-white">Asistencia evento</span></a>
-          <a href="<?php echo base_url() ?>class/attendance/list" class="list-group-item list-group-item-action py-2 ripple color-change"><i class="fas fa-calendar fa-fw me-3 text-white"></i><span class="text-white">Asistencia clase</span></a>
-          <a href="<?php echo base_url() ?>cook/attendance/list" class="list-group-item list-group-item-action py-2 ripple color-change"><i class="fas fa-globe fa-fw me-3 text-white"></i><span class="text-white">Registro de comidas</span></a>
+          <?php if (session()->get('role') == 'Administrador') : ?>
+            <a href="<?php echo base_url() ?>user/list" class="list-group-item list-group-item-action py-2 ripple  color-change"><i class="fas fa-lock fa-fw me-3 text-white"></i><span class="text-white">Usuarios</span></a>
+          <?php endif; ?>
+
+          <?php if (session()->get('role') == 'Administrador') : ?>
+            <a href="<?php echo base_url() ?>father" class="list-group-item list-group-item-action py-2 ripple color-change"><i class="fas fa-chart-line fa-fw me-3 text-white"></i><span class="text-white">Padres</span></a>
+          <?php endif; ?>
+
+          <?php if (session()->get('role') == 'Administrador') : ?>
+            <a href="<?php echo base_url() ?>teacher" class="list-group-item list-group-item-action py-2 ripple color-change"><i class="fas fa-calendar fa-fw me-3 text-white"></i><span class="text-white">Maestros</span></a>
+          <?php endif; ?>
+
+          <?php if (session()->get('role') == 'Administrador' || session()->get('role') == 'Maestro') : ?>
+            <a href="<?php echo base_url() ?>student" class="list-group-item list-group-item-action py-2 ripple"><i class="fas fa-chart-pie fa-fw me-3 text-white"></i><span class="text-white">Alumnos</span></a>
+          <?php endif; ?>
+
+          <?php if (session()->get('role') == 'Administrador') : ?>
+            <a href="<?php echo base_url() ?>event" class="list-group-item list-group-item-action py-2 ripple color-change"><i class="fas fa-chart-bar fa-fw me-3 text-white"></i><span class="text-white">Eventos</span></a>
+          <?php endif; ?>
+
+          <?php if (session()->get('role') == 'Administrador') : ?>
+            <a href="<?php echo base_url() ?>class" class="list-group-item list-group-item-action py-2 ripple color-change"><i class="fas fa-globe fa-fw me-3 text-white"></i><span class="text-white">Clases</span></a>
+          <?php endif; ?>
+
+          <?php if (session()->get('role') == 'Administrador' || session()->get('role') == 'Padre' || session()->get('role') == 'Alumno' || session()->get('role') == 'Maestro') : ?>
+            <a href="<?php echo base_url() ?>cook" class="list-group-item list-group-item-action py-2 ripple color-change"><i class="fas fa-building fa-fw me-3 text-white"></i><span class="text-white">Comidas</span></a>
+          <?php endif; ?>
+
+          <?php if (session()->get('role') == 'Administrador') : ?>
+            <a href="<?php echo base_url() ?>event/attendance/list" class="list-group-item list-group-item-action py-2 ripple color-change"><i class="fas fa-chart-line fa-fw me-3 text-white"></i><span class="text-white">Asistencia evento</span></a>
+          <?php endif; ?>
+
+          <?php if (session()->get('role') == 'Administrador') : ?>
+            <a href="<?php echo base_url() ?>class/attendance/list" class="list-group-item list-group-item-action py-2 ripple color-change"><i class="fas fa-calendar fa-fw me-3 text-white"></i><span class="text-white">Asistencia clase</span></a>
+          <?php endif; ?>
+
+          <?php if (session()->get('role') == 'Administrador' || session()->get('role') == 'Padre' || session()->get('role') == 'Alumno' || session()->get('role') == 'Maestro') : ?>
+            <a href="<?php echo base_url() ?>cook/attendance/list" class="list-group-item list-group-item-action py-2 ripple color-change"><i class="fas fa-globe fa-fw me-3 text-white"></i><span class="text-white">Registro de comidas</span></a>
+          <?php endif; ?>
         </div>
       </div>
     </nav>
@@ -117,7 +146,7 @@
 
         <!-- Brand -->
         <a class="navbar-brand" href="#">
-          <h3 class="text-white"> HEALTHY NUTRITION METER, H&M, Colegio El Faro</h3>
+          <h3 class="text-white"> HEALTHY NUTRITION METER, H&M, Colegio El Faro <strong><?= session()->get('role') ?></strong></h3>
         </a>
 
         <!-- Right links -->
