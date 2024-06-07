@@ -1,0 +1,12 @@
+@font-face {
+    font-family: ' Century Gothic,CenturyGothic,AppleGothic,sans-serif';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../font/font.ttf') format('truetype');
+  }
+  body {
+    font-family: ' Century Gothic,CenturyGothic,AppleGothic,sans-serif';
+    font-size: 15px;
+    font-weight: normal;
+
+  }

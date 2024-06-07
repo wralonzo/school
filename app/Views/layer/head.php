@@ -15,6 +15,7 @@
   <!-- MDB -->
   <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/mdb.min.css" />
   <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/select.css" />
+  <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/font.css" />
 
   <script src="https://unpkg.com/jquery/dist/jquery.min.js"></script>
   <script src="https://unpkg.com/gridjs-jquery/dist/gridjs.production.min.js"></script>
@@ -84,7 +85,7 @@
   <!--Main Navigation-->
   <header>
     <!-- Sidebar -->
-    <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-warning">
+    <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse" style="background-color: #fe7c01;">
       <div class="position-sticky">
         <div class="list-group list-group-flush mt-4">
           <a href="<?php echo base_url() ?>" class="list-group-item list-group-item-action py-2 ripple color-change" aria-current="true">
@@ -152,7 +153,7 @@
         <!-- Right links -->
         <ul class="navbar-nav ms-auto d-flex flex-row">
           <!-- Notification dropdown -->
-          <li class="nav-item dropdown">
+          <!-- <li class="nav-item dropdown">
             <a data-mdb-dropdown-init class="nav-link me-3 me-lg-0 dropdown-toggle hidden-arrow" href="#" id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
               <i class="fas fa-bell"></i>
               <span class="badge rounded-pill badge-notification bg-danger">1</span>
@@ -168,20 +169,20 @@
                 <a class="dropdown-item" href="#">Something else here</a>
               </li>
             </ul>
-          </li>
+          </li> -->
 
           <!-- Icon -->
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link me-3 me-lg-0" href="#">
               <i class="fas fa-fill-drip"></i>
             </a>
-          </li>
+          </li> -->
           <!-- Icon -->
-          <li class="nav-item me-3 me-lg-0">
+          <!-- <li class="nav-item me-3 me-lg-0">
             <a class="nav-link" href="#">
               <i class="fab fa-github"></i>
             </a>
-          </li>
+          </li> -->
           <!-- Avatar -->
           <li class="nav-item dropdown">
             <a data-mdb-dropdown-init class="nav-link dropdown-toggle hidden-arrow d-flex align-items-center" href="#" id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">

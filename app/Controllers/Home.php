@@ -41,7 +41,7 @@ class Home extends BaseController
         // $data['pacientes'] = $pacienteModel->get()->getNumRows();
         // $data['citas'] = $citasModel->get()->getNumRows();
         return view('layer/head')
-        // .view('capas/menu')
+        .view('welcome_message')
         .view('layer/footer');
     }
 }
